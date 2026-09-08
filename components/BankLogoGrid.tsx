@@ -1,0 +1,6 @@
+import Image from 'next/image';
+const bankLogos=[
+['/images/logos/banks/66.png','Banking institution'],['/images/logos/banks/67.png','Banking institution'],['/images/logos/banks/68.png','Banking institution'],['/images/logos/banks/69.png','Banking institution'],['/images/logos/banks/70.png','Banking institution'],['/images/logos/banks/75.png','Banking institution'],['/images/logos/banks/76.png','Banking institution'],['/images/logos/banks/78.png','Banking institution'],
+['/images/partner-logos/8.png','UniCredit'],['/images/partner-logos/13.png','Addiko Bank'],['/images/partner-logos/18.png','Banca Intesa'],['/images/partner-logos/29.png','Erste Group'],['/images/partner-logos/40.png','ING'],['/images/partner-logos/43.png','KBC'],['/images/partner-logos/48.png','Luminor'],['/images/partner-logos/51.png','mBank'],['/images/partner-logos/56.png','NLB'],['/images/partner-logos/61.png','OTP Bank'],['/images/partner-logos/63.png','Raiffeisen Bank International'],['/images/partner-logos/68.png','Santander'],['/images/partner-logos/71.png','Société Générale']
+] as const;
+export default function BankLogoGrid(){return <div className="bank-logo-grid">{bankLogos.map(([src,name],i)=><div className="logo-interactive" key={`${src}-${i}`}><Image src={src} alt={name} fill sizes="(max-width:720px) 50vw, 20vw"/></div>)}</div>}

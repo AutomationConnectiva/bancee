@@ -1,0 +1,911 @@
+[
+  {
+    "id": "day1",
+    "label": "DAY 1",
+    "date": "19 November 2026",
+    "stages": [
+      {
+        "id": "main",
+        "label": "MAIN STAGE",
+        "opening": [
+          {
+            "time": "08:30",
+            "title": "Registration & Morning Coffee"
+          },
+          {
+            "time": "09:00",
+            "title": "Welcome Remarks"
+          }
+        ],
+        "modules": [
+          {
+            "title": "Tech & Innovation",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "09:10",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Reinventing Banking Through Emerging Technologies",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "09:35",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "How Can Digital Infrastructure Accelerate Transformation Across Modern Banks?",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "10:00",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Scaling Innovation: How CEE Is Redefining the Future of Banking",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Lukas Kovanda",
+                    "title": "Chief Economist",
+                    "company": "Trinity Bank",
+                    "photo_url": "assets/speakers/lukas-kovanda.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Danijela Vuksanovic",
+                    "title": "Board Member, CMO",
+                    "company": "Addiko Bank",
+                    "photo_url": "assets/speakers/danijela-vuksanovic.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Driving digital acceleration across diverse and fast-evolving CEE markets",
+                  "Overcoming legacy constraints to enable scalable, innovation-ready foundations",
+                  "Leveraging partnerships to expand capabilities and accelerate transformation",
+                  "Balancing rapid innovation with compliance, security, and operational resilience"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "10:45",
+                "title": "Coffee Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          },
+          {
+            "title": "Regulatory Landscape",
+            "sponsor": "Authologic",
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "11:20",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Navigating Regulatory Uncertainty in CEE Banking: Lessons from the Front Line",
+                "speakers": [
+                  {
+                    "name": "Kadi Raudsepp",
+                    "title": "Chief Legal & Compliance Officer",
+                    "company": "Iute Group",
+                    "photo_url": "assets/speakers/kadi-raudsepp.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "11:45",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "eIDAS 2.0 - 2 Months Until Launch - Status Update",
+                "speakers": [
+                  {
+                    "name": "Jarek Sygitowicz",
+                    "title": "Co-founder and Chief Strategy Officer",
+                    "company": "Authologic",
+                    "photo_url": "assets/speakers/jarek-sygitowicz.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "12:10",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Are Banks Ready for the Next Wave of EU & CEE Regulation?",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Jarek Sygitowicz",
+                    "title": "Co-founder and Chief Strategy Officer",
+                    "company": "Authologic",
+                    "photo_url": "assets/speakers/jarek-sygitowicz.jpg",
+                    "role": "Moderator"
+                  },
+                  {
+                    "name": "Daniela Bobocea",
+                    "title": "Head of Governance and Project Management",
+                    "company": "Exim Banca Românească",
+                    "photo_url": "assets/speakers/daniela-bobocea.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Viktor Tkatsenko",
+                    "title": "Head of AML & Security Department",
+                    "company": "Citadele banka",
+                    "photo_url": "assets/speakers/viktor-tkatsenko.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Calin Rangu",
+                    "title": "Vice President",
+                    "company": "CIO Council Romania",
+                    "photo_url": "assets/speakers/calin-rangu.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Lukas Kovanda",
+                    "title": "Chief Economist",
+                    "company": "Trinity Bank",
+                    "photo_url": "assets/speakers/lukas-kovanda.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "How can banks innovate while meeting evolving EU regulations?",
+                  "What strategies strengthen resilience amid growing compliance pressure?",
+                  "Managing compliance costs while sustaining innovation momentum",
+                  "Aligning governance, data, risk, and ESG frameworks for sustainable stability"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "12:55",
+                "title": "Lunch Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "digital",
+        "label": "DIGITAL STAGE",
+        "opening": [],
+        "modules": [
+          {
+            "title": "Digital Infrastructure",
+            "sponsor": "Evrotrust",
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "14:00",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Digital Trust in Banking Innovation",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "14:25",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Securing Digital Operations with Identity-Driven Infrastructure",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "14:50",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Building Resilient Digital Foundations for Customer-Centric Banking",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Andrei Iacșișer",
+                    "title": "Head of Technology Partnerships, Digital Transformation & AI Division",
+                    "company": "EXIM Banca Românească",
+                    "photo_url": "assets/speakers/andrei-iacsiser.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Aligning digital infrastructure strategy with evolving customer expectations",
+                  "Leveraging technology to enhance operational efficiency and reduce risk",
+                  "Balancing innovation speed with regulatory and security requirements",
+                  "Ensuring secure and compliant workflows across multiple banking channels"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "15:35",
+                "title": "Coffee Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          },
+          {
+            "title": "Core Transformation",
+            "sponsor": "ERI",
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "16:10",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "From Innovation to Implementation: Technologies Transforming Banking",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "16:35",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Enabling Financing Europe’s Future: From Deposits to Investment: Unlocking Europe’s Growth Potential",
+                "speakers": [
+                  {
+                    "name": "Alan Goodrich",
+                    "title": "Sales Director",
+                    "company": "ERI",
+                    "photo_url": "assets/speakers/alan-goodrich.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "17:00",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Modernizing Core Banking for Strategic Agility",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Alan Goodrich",
+                    "title": "Sales Director",
+                    "company": "ERI",
+                    "photo_url": "assets/speakers/alan-goodrich.jpg",
+                    "role": "Moderator"
+                  },
+                  {
+                    "name": "Andrei Iacșișer",
+                    "title": "Head of Technology Partnerships, Digital Transformation & AI Division",
+                    "company": "EXIM Banca Românească",
+                    "photo_url": "assets/speakers/andrei-iacsiser.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Aligning core modernization with strategic objectives in CEE banks",
+                  "Prioritizing technology upgrades for efficiency and scalable operation",
+                  "How can banks manage regulatory compliance during transformation?",
+                  "What metrics best measure ROI and risk in modernization?"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "17:45",
+                "title": "End of Day 1, Networking & 1-to-1 Meetings"
+              },
+              {
+                "time": "18:30",
+                "title": "Cocktail Reception & Gala Dinner"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "impact",
+        "label": "IMPACT STAGE",
+        "opening": [],
+        "modules": [
+          {
+            "title": "Next-Gen Payments",
+            "sponsor": "Tieto Banktech",
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "14:00",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Enhancing Payment Security Through Effective Payee Verification",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "14:25",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Smart Payment Systems: Risk Reduction & Operational Efficiency",
+                "speakers": [
+                  {
+                    "name": "Andrejs Vinakovs",
+                    "title": "Lead Product Manager",
+                    "company": "Tieto Banktech",
+                    "photo_url": "",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "14:50",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "AI in Next-Gen Payments: What’s Real, What’s Ready, What’s Still Hype?",
+                "speakers": [],
+                "panelists": [],
+                "discussionPoints": [
+                  "Evaluating real AI payment use-cases delivering measurable operational impact",
+                  "Aligning AI Innovation with the EU Instant Payments Regulation and PSD3 Compliance",
+                  "Identifying readiness gaps: data, governance, fraud systems, and compliance alignment",
+                  "Assessing AI-driven risk scoring for domestic and cross-border transactions beyond traditional models"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "15:35",
+                "title": "Coffee Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          },
+          {
+            "title": "Fraud & Financial Crime",
+            "sponsor": "Guardsquare",
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "16:10",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Rebuilding Fraud and Financial Crime Defences for the Instant-Payments Era",
+                "speakers": [
+                  {
+                    "name": "Pallavi Kapale",
+                    "title": "Senior Financial Crime Officer, Financial Intelligence Unit",
+                    "company": "Bank of China",
+                    "photo_url": "assets/speakers/pallavi-kapale.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "16:35",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Lessons Learned from a Major Financial Fraud Case that Started from a Mobile App Attack",
+                "speakers": [
+                  {
+                    "name": "Anton Baranenko",
+                    "title": "Product Manager",
+                    "company": "Guardsquare",
+                    "photo_url": "assets/speakers/anton-baranenko.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "17:00",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Can Banks Stay Ahead of Fraudsters in the AI Era?",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Anton Baranenko",
+                    "title": "Product Manager",
+                    "company": "Guardsquare",
+                    "photo_url": "assets/speakers/anton-baranenko.jpg",
+                    "role": "Moderator"
+                  },
+                  {
+                    "name": "Pallavi Kapale",
+                    "title": "Senior Financial Crime Officer, Financial Intelligence Unit",
+                    "company": "Bank of China",
+                    "photo_url": "assets/speakers/pallavi-kapale.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Viktor Tkatsenko",
+                    "title": "Head of AML & Security Department",
+                    "company": "Citadele banka",
+                    "photo_url": "assets/speakers/viktor-tkatsenko.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Kadi Raudsepp",
+                    "title": "Chief Legal & Compliance Officer",
+                    "company": "Iute Group",
+                    "photo_url": "assets/speakers/kadi-raudsepp.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Is AI creating more fraud opportunities than protection?",
+                  "Fraud prevention vs. financial inclusion",
+                  "The rise of synthetic identities and deepfake attacks",
+                  "Should banks share fraud intelligence more openly?"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "17:45",
+                "title": "End of Day 1, Networking & 1-to-1 Meetings"
+              },
+              {
+                "time": "18:30",
+                "title": "Cocktail Reception & Gala Dinner"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "day2",
+    "label": "DAY 2",
+    "date": "20 November 2026",
+    "stages": [
+      {
+        "id": "digital",
+        "label": "DIGITAL STAGE",
+        "opening": [
+          {
+            "time": "08:30",
+            "title": "Registration & Morning Coffee"
+          },
+          {
+            "time": "09:00",
+            "title": "Welcome Remarks"
+          }
+        ],
+        "modules": [
+          {
+            "title": "CX Personalization",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "09:10",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Driving Growth Through Customer-Focused Digital Innovation",
+                "speakers": [
+                  {
+                    "name": "Ivan Ivanov",
+                    "title": "Director Retail Banking",
+                    "company": "Bulgarian American Credit Bank",
+                    "photo_url": "assets/speakers/ivan-ivanov.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "09:35",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Turning Data and Insights into Actionable Customer Value",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "10:00",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Strategies for Digital Excellence in CX",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Ivan Ivanov",
+                    "title": "Director Retail Banking",
+                    "company": "Bulgarian American Credit Bank",
+                    "photo_url": "assets/speakers/ivan-ivanov.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Branimira Milusheva",
+                    "title": "Founder & CEO",
+                    "company": "Women in Banking and Finance",
+                    "photo_url": "assets/speakers/branimira-milusheva.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Monika Hruba",
+                    "title": "Head of Product Design CoE",
+                    "company": "Česká spořitelna",
+                    "photo_url": "assets/speakers/monika-hruba.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Implementing AI-driven insights to anticipate evolving customer needs",
+                  "Seamless omnichannel experiences across digital and physical touchpoints",
+                  "Strategies to measure emotional engagement, loyalty, and advocacy",
+                  "Leveraging customer data and insights to optimize ROI across the full customer journey"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "10:45",
+                "title": "Coffee Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          },
+          {
+            "title": "Lending Transformation",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "11:20",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Reinventing Mortgage Lending: Digital Journeys, AI Insights, and Smarter Risk",
+                "speakers": [
+                  {
+                    "name": "Davorin Okorn",
+                    "title": "Director Credit Risk Management",
+                    "company": "OTP Bank",
+                    "photo_url": "assets/speakers/davorin-okorn.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "11:45",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Smart Lending: Leveraging Technology to Enhance the Borrowing Journey",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "12:10",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "The Rise of Smart Lending: Practical AI Applications in Credit Transformation",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Davorin Okorn",
+                    "title": "Director Credit Risk Management",
+                    "company": "OTP Bank",
+                    "photo_url": "assets/speakers/davorin-okorn.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Kaspars Lukačovs",
+                    "title": "Head of Retail Business Development",
+                    "company": "Luminor Group",
+                    "photo_url": "https://lh3.googleusercontent.com/d/12HFc_LZwbm8JLv5bBazW2SFxRnM-i3gx",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Branimira Milusheva",
+                    "title": "Founder & CEO",
+                    "company": "Women in Banking and Finance",
+                    "photo_url": "assets/speakers/branimira-milusheva.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Strategic priorities for AI adoption in lending modernization",
+                  "Integrating alternative data sources into lending decision models",
+                  "Balancing automation with responsible lending and regulatory expectations",
+                  "Lessons learned from implementing end-to-end digital loan journeys"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "12:55",
+                "title": "Lunch Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "impact",
+        "label": "IMPACT STAGE",
+        "opening": [
+          {
+            "time": "08:30",
+            "title": "Registration & Morning Coffee"
+          },
+          {
+            "time": "09:00",
+            "title": "Welcome Remarks"
+          }
+        ],
+        "modules": [
+          {
+            "title": "Cybersecurity & Resilience",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "09:10",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Safeguarding Banking Data in the Age of Digital Transformation",
+                "speakers": [
+                  {
+                    "name": "Daniela Bobocea",
+                    "title": "Head of Governance and Project Management",
+                    "company": "Exim Banca Românească",
+                    "photo_url": "assets/speakers/daniela-bobocea.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "09:35",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Threat Prevention: Leveraging Intelligent Security Technologies",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "10:00",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Mitigating Cyber Threats and Operational Risks in CEE Banking",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Calin Rangu",
+                    "title": "Vice President",
+                    "company": "CIO Council Romania",
+                    "photo_url": "assets/speakers/calin-rangu.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "Strengthening security foundations as data volumes, channels, and digital interactions expand",
+                  "How can banks balance customer experience with stronger authentication and fraud controls?",
+                  "What role should AI and analytics play in improving AML monitoring and threat detection?",
+                  "How can CEE institutions build resilience against cross-border, systemic, and supply-chain cyber risks?",
+                  "What does quantum computing mean for encryption, security, and the financial systems banks rely on today?"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "10:45",
+                "title": "Coffee Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          },
+          {
+            "title": "Global Payments & CEE",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "11:20",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "The Future of Payments: Driving Automation, Resilience, and Innovation",
+                "speakers": [
+                  {
+                    "name": "Natalia Nasco-Filimon",
+                    "title": "Vice President and Chief Operating Officer",
+                    "company": "Fincombank",
+                    "photo_url": "assets/speakers/natalia-nasco-filimon.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "11:45",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Optimizing Payment Operations for Speed, Security, and Scale",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "12:10",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Driving Seamless Payments Across CEE: Mobile, Card, and Innovation",
+                "speakers": [],
+                "panelists": [],
+                "discussionPoints": [
+                  "How mobile and card payments are evolving in CEE",
+                  "Opportunities and challenges in cross-border payment interoperability",
+                  "Consumer adoption trends: convenience, speed, and security expectations",
+                  "How banks can stay competitive amid fintech disruption"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "12:55",
+                "title": "Lunch Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "main",
+        "label": "MAIN STAGE",
+        "opening": [],
+        "modules": [
+          {
+            "title": "Risk, AI, and Strategy",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "14:00",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "AI-Driven Risk Management: Transforming Decision-Making in Banks",
+                "speakers": [
+                  {
+                    "name": "Nermina Alic",
+                    "title": "Board Member for Risk, Chief Risk Officer",
+                    "company": "Raiffeisen Bank",
+                    "photo_url": "assets/speakers/nermina-alic.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "14:25",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "What Every CEE Banking Executive Needs to Know About Generative AI",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "14:50",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "Leading Through Uncertainty: Profitability, Risk & Reinvention",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Nermina Alic",
+                    "title": "Board Member for Risk, Chief Risk Officer",
+                    "company": "Raiffeisen Bank",
+                    "photo_url": "assets/speakers/nermina-alic.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Vladyslav Sytnikov",
+                    "title": "Vice President, Treasury and Wealth Management",
+                    "company": "Global US Bank",
+                    "photo_url": "assets/speakers/vladyslav-sytnikov.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Petr Toman",
+                    "title": "Head of Commercial Banking Innovations",
+                    "company": "MONETA Money Bank",
+                    "photo_url": "assets/speakers/petr-toman.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "How are CEE banks managing profitability and tech-driven change under tight regulation?",
+                  "How to lead in an environment of uncertainty, cost pressure, and changing expectations?",
+                  "What’s practical and what's still too risky? Decision-making when clarity is limited"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "15:35",
+                "title": "Coffee Break, Networking & 1-to-1 Meetings"
+              }
+            ]
+          },
+          {
+            "title": "Leadership & Transformation",
+            "sponsor": null,
+            "sponsorLogo": "",
+            "sessions": [
+              {
+                "time": "16:10",
+                "type": "keynote",
+                "typeLabel": "Keynote",
+                "title": "Digital Finance, Payments and Cybersecurity – Emerging Challenges, Regulatory Perspectives and the Way Forward",
+                "speakers": [
+                  {
+                    "name": "Sébastien De Brouwer",
+                    "title": "Deputy CEO",
+                    "company": "European Banking Federation",
+                    "photo_url": "assets/speakers/advisory-sebastien-uniform.jpg",
+                    "role": "Speaker"
+                  }
+                ],
+                "panelists": []
+              },
+              {
+                "time": "16:35",
+                "type": "sponsored",
+                "typeLabel": "Sponsored",
+                "title": "Accelerated Talent Transformation: Upskilling for Data & AI Roles",
+                "speakers": [],
+                "panelists": []
+              },
+              {
+                "time": "17:00",
+                "type": "panel",
+                "typeLabel": "Panel Discussion",
+                "title": "The Future Workforce: Human Skills in an AI-Driven Bank",
+                "speakers": [],
+                "panelists": [
+                  {
+                    "name": "Marko Rodic",
+                    "title": "Financial Advisor, Former Head of Lending",
+                    "company": "Credit Agricole Bank",
+                    "photo_url": "assets/speakers/marko-rodic.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Petr Toman",
+                    "title": "Head of Commercial Banking Innovations",
+                    "company": "MONETA Money Bank",
+                    "photo_url": "assets/speakers/petr-toman.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Vladyslav Sytnikov",
+                    "title": "Vice President, Treasury and Wealth Management",
+                    "company": "Global US Bank",
+                    "photo_url": "assets/speakers/vladyslav-sytnikov.jpg",
+                    "role": "Panelist"
+                  },
+                  {
+                    "name": "Monika Hruba",
+                    "title": "Head of Product Design CoE",
+                    "company": "Česká spořitelna",
+                    "photo_url": "assets/speakers/monika-hruba.jpg",
+                    "role": "Panelist"
+                  }
+                ],
+                "discussionPoints": [
+                  "How can banks balance automation with essential human judgment?",
+                  "Identifying critical human skills that complement AI-driven operations",
+                  "Redesigning workforce roles as technology reshapes banking functions",
+                  "Embedding continuous learning models for adaptive, future-ready teams"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "time": "17:45",
+                "title": "Farewell & See You at the Next #BANCEE Events"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

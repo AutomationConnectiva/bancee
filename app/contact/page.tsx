@@ -1,0 +1,10 @@
+import type { Metadata } from 'next';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import ContactForm from '../../components/ContactForm';
+export const metadata: Metadata = { title: 'Contact Banking CEE', description: 'Get in touch with the Banking CEE Network about speaking, attendance, partnerships or general enquiries.' };
+export default function Contact(){return <main className="inner-page contact-page">
+ <section className="contact-hero compact-contact-hero"><Header/><div className="shell contact-content"><p className="eyebrow">Get in Touch</p><h1>Let&apos;s Start a Conversation.</h1><p>Whether you&apos;re interested in attending, speaking, partnering with Banking CEE or simply have a question, our team would be happy to hear from you.</p></div></section>
+ <section className="section-white"><div className="shell contact-main-grid"><ContactForm/><aside className="contact-info"><p className="eyebrow dark">Contact Information</p><h3>Banking CEE Network</h3><p>Connecting the banking community across Central &amp; Eastern Europe.</p><div className="contact-info-block"><span>GENERAL ENQUIRIES</span><a href="mailto:info@bancee.eu">info@bancee.eu</a></div><div className="contact-info-block"><span>OUR EVENTS</span><div className="contact-event expo-contact-event"><strong>Banking CEE Expo 2026</strong><p>19–20 November 2026 · Prague, Czechia</p><a href="/expo">Explore the Expo →</a></div><div className="contact-event summit-contact-event"><strong>Digital Banking CEE Summit 2027</strong><p>May 2027 · Date &amp; Location TBA</p><a href="/summit">Explore the Summit →</a></div></div><div className="contact-info-block"><span>FOLLOW BANKING CEE</span><p>Stay connected with the Banking CEE community and follow the latest event updates, speakers, conversations and insights.</p><div className="social-links"><a href="https://www.linkedin.com/company/banking-cee-network/" target="_blank" rel="noreferrer">LinkedIn →</a><a href="https://www.youtube.com/@BankingCEE" target="_blank" rel="noreferrer">YouTube →</a></div></div></aside></div></section>
+ <Footer/>
+ </main>}
