@@ -13,7 +13,7 @@ const dayDates:Record<string,string>={day1:'19 November 2026',day2:'20 November 
 
 function PersonCard({p}:{p:AgendaPerson}){
  const [broken,setBroken]=useState(false);
- const img=!broken&&(p.photo_url||fallbackPhoto(p.name));
+const img=!broken&&p.photo_url;
  return <div className="agenda-person-card">{img?<img src={img} alt={p.name} width={76} height={76} className="agenda-person-photo" onError={()=>setBroken(true)}/>:<div className="agenda-person-initials">{p.name.split(' ').slice(0,2).map((x:string)=>x[0]).join('')}</div>}<div className="agenda-person-copy"><strong>{p.name}</strong>{p.title&&<span>{p.title}</span>}{p.company&&<b>{p.company}</b>}</div></div>
 }
 

@@ -46,5 +46,29 @@
     "referrer": "http://localhost:3000/partners",
     "status": "new",
     "submittedAt": "2026-09-10T17:19:58.692Z"
+  },
+  {
+    "id": "partner_1789067708588_6ceb0be4ee",
+    "firstName": "20",
+    "lastName": "21",
+    "jobTitle": "22",
+    "organisation": "23",
+    "email": "jo@connectiva.events",
+    "phone": "97",
+    "country": "Ukraine",
+    "interests": [
+      "Banking CEE Expo 2026"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility"
+    ],
+    "expertise": [
+      "Core Banking, Digital Transformation & Infrastructure"
+    ],
+    "source": "expo-sponsors",
+    "eventContext": "expo-2026",
+    "referrer": "http://10.147.163.112:3000/expo",
+    "status": "new",
+    "submittedAt": "2026-09-10T19:15:08.589Z"
   }
 ]

@@ -6,6 +6,7 @@ import RequestAttendanceForm from '../../components/RequestAttendanceForm';
 import SpeakerGrid from '../../components/SpeakerGrid';
 import TestimonialSlider from '../../components/TestimonialSlider';
 import { getSpeakers } from '../../lib/getSpeakers';
+import { getLogosByIds } from '../../lib/getSponsor';
 
 export const metadata: Metadata = { title: 'Digital Banking CEE Summit 2027', description: 'A focused senior-level gathering for 100 banking executives shaping digital banking across Central & Eastern Europe.' };
 const modules = [
@@ -18,10 +19,9 @@ const modules = [
   'Core Modernisation, Cloud & Data',
 ];
 
-const partnerNames = ['Evrotrust', 'Tieto', 'Comarch', 'OneSpan', 'FME', 'Authologic', 'ERI', 'Salesforce'];
-
 export default async function SummitPage() {
   const speakers = await getSpeakers('summit');
+  const summitLogos = await getLogosByIds([8243, 8391, 2050, 7356, 8127, 823]); // Evrotrust, ERI, Salesforce, Authologic, fme, OneSpan
   return (
     <main className="summit-page" id="top">
       <section className="summit-hero">
@@ -120,7 +120,19 @@ export default async function SummitPage() {
           <div><p className="eyebrow dark">Sponsors</p><h2>Partnership With Purpose.</h2></div>
           <p className="section-intro">Summit partnerships are designed for technology companies that want relevant visibility and direct engagement with a concentrated senior banking audience.</p>
         </div>
-        <div className="shell confirmed-sponsor-block"><p className="sponsor-history-note">2026 Sponsors</p><p className="sponsor-tier-label">Silver Sponsors</p><div className="sponsor-logo-grid summit-logo-grid"><div><Image src="/images/event-sponsors/summit-evrotrust.png" alt="Evrotrust" width={240} height={140} /></div><div><Image src="/images/event-sponsors/summit-eri.png" alt="ERI" width={240} height={140} /></div><div><Image src="/images/event-sponsors/summit-salesforce.jpg" alt="Salesforce" width={240} height={140} /></div><div><Image src="/images/event-sponsors/summit-authologic.png" alt="Authologic" width={240} height={140} /></div><div><Image src="/images/event-sponsors/summit-fme.png" alt="fme" width={240} height={140} /></div><div><Image src="/images/event-sponsors/summit-onespan.png" alt="OneSpan" width={240} height={140} /></div></div><div className="sponsor-cta"><a className="btn summit-dark-btn" href="/partnership-enquiry?event=summit-2027&source=summit-sponsors">Explore Partnership Opportunities</a></div></div>
+        <div className="shell confirmed-sponsor-block">
+          <p className="sponsor-history-note">2026 Sponsors</p>
+          <p className="sponsor-tier-label">Silver Sponsors</p>
+          <div className="sponsor-logo-grid summit-logo-grid">
+            <div><img src={summitLogos[8243]} alt="Evrotrust" width={240} height={140} /></div>
+            <div><img src={summitLogos[8391]} alt="ERI" width={240} height={140} /></div>
+            <div><img src={summitLogos[2050]} alt="Salesforce" width={240} height={140} /></div>
+            <div><img src={summitLogos[7356]} alt="Authologic" width={240} height={140} /></div>
+            <div><img src={summitLogos[8127]} alt="fme" width={240} height={140} /></div>
+            <div><img src={summitLogos[823]} alt="OneSpan" width={240} height={140} /></div>
+          </div>
+          <div className="sponsor-cta"><a className="btn summit-dark-btn" href="/partnership-enquiry?event=summit-2027&source=summit-sponsors">Explore Partnership Opportunities</a></div>
+        </div>
       </section>
 
       <Footer/>

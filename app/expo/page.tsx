@@ -6,6 +6,7 @@ import RequestAttendanceForm from '../../components/RequestAttendanceForm';
 import SpeakerGrid from '../../components/SpeakerGrid';
 import TestimonialSlider from '../../components/TestimonialSlider';
 import { getSpeakers } from '../../lib/getSpeakers';
+import { getLogosByIds } from '../../lib/getSponsor';
 
 export const metadata: Metadata = { title: 'Banking CEE Expo 2026', description: 'Banking CEE Expo 2026 in Prague brings together 250+ attendees from across Central & Eastern Europe for two days of content, networking and business conversations.' };
 const modules = [
@@ -23,16 +24,9 @@ const modules = [
   'Leadership & Transformation',
 ];
 
-const speakerPreview = [
-  ['Banking Leaders', 'Senior decision-makers from banks and financial institutions across CEE'],
-  ['Regulators & Associations', 'Regional voices shaping policy, payments and the wider banking ecosystem'],
-  ['Technology Experts', 'Specialists bringing practical transformation experience and case studies'],
-];
-
-const partnerNames = ['Comarch', 'Tieto', 'Evrotrust', 'CRIF', 'Temenos', 'Backbase', 'OneSpan', 'FME'];
-
 export default async function ExpoPage() {
   const speakers = await getSpeakers('expo');
+  const expoLogos = await getLogosByIds([7356, 8243, 8391, 8920, 8913]); // Authologic, Evrotrust, ERI, Tieto, Guardsquare
   return (
     <main className="expo-page" id="top">
       <section className="expo-hero">
@@ -128,13 +122,19 @@ export default async function ExpoPage() {
           <div className="sponsor-visual"><Image src="/images/expo-2025-evrotrust-activation.jpg" alt="Evrotrust activation at Banking CEE Expo" fill className="cover" /></div>
           <div className="sponsor-visual"><Image src="/images/expo-2025-tietoevry-activation.jpg" alt="Technology partner activation at Banking CEE Expo" fill className="cover" /></div>
         </div>
-        <div className="shell confirmed-sponsor-block"><p className="sponsor-tier-label">Gold Sponsor</p><div className="sponsor-logo-grid sponsor-logo-grid-gold">
-          <div><Image src="/images/event-sponsors/expo-authologic.png" alt="Authologic" width={300} height={170} /></div></div>
-          <p className="sponsor-tier-label">Silver Sponsors</p><div className="sponsor-logo-grid"><div>
-            <Image src="/images/event-sponsors/expo-evrotrust.png" alt="Evrotrust" width={240} height={140} /></div><div>
-              <Image src="/images/event-sponsors/expo-eri.png" alt="ERI" width={240} height={140} /></div><div>
-                <Image src="/images/event-sponsors/expo-tieto.png" alt="Tieto Banktech" width={240} height={140} /></div><div>
-                 <Image src="/images/event-sponsors/expo-guardsquare.png" alt="Guardsquare" width={240} height={140} className="logo-larger" /></div></div></div>
+        <div className="shell confirmed-sponsor-block">
+          <p className="sponsor-tier-label">Gold Sponsor</p>
+          <div className="sponsor-logo-grid sponsor-logo-grid-gold">
+            <div><img src={expoLogos[7356]} alt="Authologic" width={300} height={170} /></div>
+          </div>
+          <p className="sponsor-tier-label">Silver Sponsors</p>
+          <div className="sponsor-logo-grid">
+            <div><img src={expoLogos[8243]} alt="Evrotrust" width={240} height={140} /></div>
+            <div><img src={expoLogos[8391]} alt="ERI" width={240} height={140} /></div>
+            <div><img src={expoLogos[8920]} alt="Tieto Banktech" width={240} height={140} /></div>
+            <div><img src={expoLogos[8913]} alt="Guardsquare" width={240} height={140} className="logo-larger" /></div>
+          </div>
+        </div>
         <div className="shell sponsor-cta"><a className="btn expo-dark-btn" href="/partnership-enquiry?event=expo-2026&source=expo-sponsors">Explore Partnership Opportunities</a><span>info@bancee.eu</span></div>
       </section>
 
