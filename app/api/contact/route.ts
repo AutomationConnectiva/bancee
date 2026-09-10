@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sendEmail } from '../../../lib/attendance';
 import { logSubmission } from '../../../lib/formLog';
-
+export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 export async function POST(req: Request) {
