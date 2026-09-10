@@ -1,75 +1,374 @@
-import agendaFallback from '../data/expo-agenda-2026.json';
 import { supabase } from './supabase';
 
-type AgendaPerson = { speaker_id?:string; name:string; title?:string; company?:string; photo_url?:string; role?:string };
-export type AgendaSession = { time:string; type:string; typeLabel:string; title:string; speakers:AgendaPerson[]; panelists:AgendaPerson[]; discussionPoints?:string[] };
-export type AgendaModule = { title:string; sponsor?:string|null; sponsorLogo?:string; sessions:AgendaSession[]; after?:{time:string;title:string}[] };
-export type AgendaStage = { id:string; label:string; opening?:{time:string;title:string}[]; modules:AgendaModule[] };
-export type AgendaDay = { id:string; label:string; date:string; stages:AgendaStage[] };
+export type AgendaPerson = {
+  id: number;
+  name: string;
+  title?: string;
+  company?: string;
+  photo_url?: string;
+  role?: string; // 'Speaker' | 'Moderator' | 'Panelist'
+};
 
-const normalize=(s:string)=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-const clean=(s:any)=>String(s??'').replace(/\s+/g,' ').trim();
-function directDrive(url:string){const m=url.match(/\/d\/(.+?)\//);return m?`https://lh3.googleusercontent.com/d/${m[1]}`:url;}
-function formatTime(value:any){
-  const raw=clean(value);if(!raw)return '';
-  if(/^\d{1,2}:\d{1,2}$/.test(raw)){const [h,m]=raw.split(':');return `${h.padStart(2,'0')}:${m.padEnd(2,'0').slice(0,2)}`}
-  if(/^\d{1,2}\.\d{1,2}$/.test(raw)){const [h,m]=raw.split('.');return `${h.padStart(2,'0')}:${m.padEnd(2,'0').slice(0,2)}`}
-  if(/^\d{1,2}$/.test(raw))return `${raw.padStart(2,'0')}:00`;
-  return raw.replace('.',':');
+export type AgendaSession = {
+  agenda_id: number;
+  time: string;
+  end_time?: string;
+  type: string;
+  typeLabel: string;
+  title: string;
+  description?: string;
+  discussionPoints?: string[];
+  speakers: AgendaPerson[];
+  panelists: AgendaPerson[];
+};
+
+export type AgendaModule = {
+  module_id: string;
+  title: string;
+  sponsor?: { name: string; logo?: string } | null;
+  sessions: AgendaSession[];
+  after?: { time: string; title: string }[];
+};
+
+export type AgendaStage = {
+  id: string;
+  label: string;
+  opening?: { time: string; title: string }[];
+  modules: AgendaModule[];
+};
+
+export type AgendaDay = {
+  id: string;
+  label: string;
+  date: string;
+  stages: AgendaStage[];
+};
+
+// ---------------------------------------------------------------------------
+// Static structural content — NOT in the `agenda` table (no source column
+// for ceremony/break timings or the calendar date). Edit these directly;
+// everything else below is fully DB-driven from Supabase.
+// ---------------------------------------------------------------------------
+const DAY_META: Record<string, { label: string; date: string }> = {
+  day1: { label: 'DAY 1', date: '19 November 2026' },
+  day2: { label: 'DAY 2', date: 'TBD' },
+};
+
+const STAGE_LABELS: Record<string, string> = {
+  main: 'MAIN STAGE',
+  digital: 'DIGITAL STAGE',
+  impact: 'IMPACT STAGE',
+  other: 'OTHER',
+};
+
+// Keyed by `${day}|${stage}` — shown once, before that stage's first module.
+const STAGE_OPENING: Record<string, { time: string; title: string }[]> = {
+  'day1|main': [
+    { time: '08:30', title: 'Registration & Morning Coffee' },
+    { time: '09:00', title: 'Welcome Remarks' },
+  ],
+  'day2|digital': [
+    { time: '08:30', title: 'Registration & Morning Coffee' },
+    { time: '09:00', title: 'Welcome Remarks' },
+  ],
+  'day2|impact': [
+    { time: '08:30', title: 'Registration & Morning Coffee' },
+    { time: '09:00', title: 'Welcome Remarks' },
+  ],
+};
+// Keyed by `${day}|${stage}|${normalizedModuleTheme}` — shown right after
+// that specific module ends, before the next one starts.
+const MODULE_AFTER: Record<string, { time: string; title: string }[]> = {
+  // Day 1 — Main Stage
+  [`day1|main|${normalizeName('Tech & Innovation')}`]: [
+    { time: '10:45', title: 'Coffee Break, Networking & 1-to-1 Meetings' },
+  ],
+  [`day1|main|${normalizeName('Regulatory Landscape')}`]: [
+    { time: '12:55', title: 'Lunch Break, Networking & 1-to-1 Meetings' },
+  ],
+
+  // Day 1 — Digital Stage
+  [`day1|digital|${normalizeName('Digital Infrastructure')}`]: [
+    { time: '15:35', title: 'Coffee Break, Networking & 1-to-1 Meetings' },
+  ],
+  [`day1|digital|${normalizeName('Core Transformation')}`]: [
+    { time: '17:45', title: 'End of Day 1, Networking & 1-to-1 Meetings' },
+    { time: '18:30', title: 'Cocktail Reception & Gala Dinner' },
+  ],
+
+  // Day 1 — Impact Stage
+  [`day1|impact|${normalizeName('Next-Gen Payments')}`]: [
+    { time: '15:35', title: 'Coffee Break, Networking & 1-to-1 Meetings' },
+  ],
+  [`day1|impact|${normalizeName('Fraud & Financial Crime')}`]: [
+    { time: '17:45', title: 'End of Day 1, Networking & 1-to-1 Meetings' },
+    { time: '18:30', title: 'Cocktail Reception & Gala Dinner' },
+  ],
+
+  // Day 2 — Main Stage
+  [`day2|main|${normalizeName('Risk, AI, and Strategy')}`]: [
+    { time: '15:35', title: 'Coffee Break, Networking & 1-to-1 Meetings' },
+  ],
+  [`day2|main|${normalizeName('Leadership & Transformation')}`]: [
+    { time: '17:45', title: 'Farewell & See You at the Next #BANCEE Events' },
+  ],
+
+  // Day 2 — Digital Stage
+  [`day2|digital|${normalizeName('CX Personalization')}`]: [
+    { time: '10:45', title: 'Coffee Break, Networking & 1-to-1 Meetings' },
+  ],
+  [`day2|digital|${normalizeName('Lending Transformation')}`]: [
+    { time: '12:55', title: 'Lunch Break, Networking & 1-to-1 Meetings' },
+  ],
+
+  // Day 2 — Impact Stage
+  [`day2|impact|${normalizeName('Cybersecurity & Resilience')}`]: [
+    { time: '10:45', title: 'Coffee Break, Networking & 1-to-1 Meetings' },
+  ],
+  [`day2|impact|${normalizeName('Global Payments & CEE')}`]: [
+    { time: '12:55', title: 'Lunch Break, Networking & 1-to-1 Meetings' },
+  ],
+};
+
+// Per-day stage tab order (Day 1: Main first; Day 2: Digital first).
+const STAGE_ORDER_BY_DAY: Record<string, string[]> = {
+  day1: ['main', 'digital', 'impact', 'other'],
+  day2: ['digital', 'impact', 'main', 'other'],
+};
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+function directDrive(url?: string | null) {
+  if (!url) return '';
+  const m = url.match(/\/d\/(.+?)\//);
+  return m ? `https://lh3.googleusercontent.com/d/${m[1]}` : url;
 }
-function sessionType(label:string){const x=label.toLowerCase();return x.startsWith('panel')?'panel':x.startsWith('sponsor')?'sponsored':'keynote'}
-function parsePoints(text:any){const x=String(text||'').trim();if(!x||x==='….'||x==='...')return undefined;const pts=x.split(/\r?\n/).map(y=>y.trim().replace(/^[-•]\s*/,'' )).filter(Boolean);return pts.length?pts:undefined}
-function parsePeople(value:any, panel=false):AgendaPerson[]{if(!value)return[];return String(value).split('|').map(clean).filter(Boolean).map(raw=>{const moderator=/\(\s*Moderator\s*\)/i.test(raw);const name=clean(raw.replace(/\s*\(\s*Moderator\s*\)\s*/ig,''));return{name,title:'',company:'',photo_url:'',role:panel?(moderator?'Moderator':'Panelist'):'Speaker'}})}
-function assignSpeakerIds(people:AgendaPerson[],value:any){const ids=Array.isArray(value)?value.map(clean):String(value||'').split('|').map(clean).filter(Boolean);for(let i=0;i<people.length;i++)if(ids[i])people[i].speaker_id=ids[i];return people;}
 
-function applyFlatAgendaRows(days:AgendaDay[],rows:any[]){
-  if(!Array.isArray(rows)||!rows.length)return days;
-  const byKey=new Map<string,AgendaModule>();
-  for(const day of days)for(const stage of day.stages)for(const mod of stage.modules)byKey.set(`${day.id}|${stage.id}|${normalize(mod.title)}`,mod);
-  for(const row of rows){
-    if(clean(row.event_id||row.eventId||'BANCEE26')!=='BANCEE26')continue;
-    const code=clean(row['Stage and Day']||row.stage_and_day||row.stageDay||'');
-    const theme=clean(row.theme);if(!code||!theme)continue;
-    const day=code.includes('D2')?'day2':'day1';
-    const stage=code.startsWith('MS')?'main':code.startsWith('DS')?'digital':code.startsWith('IS')?'impact':'';
-    const mod=byKey.get(`${day}|${stage}|${normalize(theme)}`);if(!mod)continue;
-    const sponsor=clean(row.sponsor);mod.sponsor=sponsor||null;
-    const title=clean(row.title);const time=formatTime(row.start_time||row.startTime);
-    const session=mod.sessions.find(s=>normalize(s.title)===normalize(title))||mod.sessions.find(s=>s.time.replace(/^0/,'')===time.replace(/^0/,''));
-    if(!session)continue;
-    const label=clean(row.module_type||row.moduleType||session.typeLabel);
-    session.title=title||session.title;session.time=time||session.time;session.typeLabel=label||session.typeLabel;session.type=sessionType(session.typeLabel);
-    const points=parsePoints(row.description);if(points)session.discussionPoints=points;else if(session.type!=='panel')delete session.discussionPoints;
-    session.speakers=assignSpeakerIds(parsePeople(row.speak_moderate||row.speakModerate,false),row.speaker_ids||row.speakerIds||row.speak_moderate_speaker_ids);
-    session.panelists=assignSpeakerIds(parsePeople(row.panelist,true),row.panelist_speaker_ids||row.panelistSpeakerIds);
-  }
-  return days;
+function formatTime(t?: string | null) {
+  if (!t) return '';
+  return t.slice(0, 5);
 }
 
-async function enrichSpeakerProfiles(days:AgendaDay[]){
-  for(const day of days)for(const stage of day.stages)for(const mod of stage.modules)for(const session of mod.sessions)for(const person of [...session.speakers,...session.panelists]){
-    if(person.photo_url?.startsWith('assets/speakers/'))person.photo_url='/images/agenda/speakers/'+person.photo_url.split('/').pop();
+function sessionType(label?: string | null) {
+  const x = (label || '').toLowerCase();
+  return x.startsWith('panel') ? 'panel' : x.startsWith('sponsor') ? 'sponsored' : 'keynote';
+}
+
+function parseStageDay(code: string) {
+  const c = (code || '').toUpperCase();
+  const day = c.includes('D2') ? 'day2' : 'day1';
+  const stage = c.startsWith('MS') ? 'main' : c.startsWith('DS') ? 'digital' : c.startsWith('IS') ? 'impact' : 'other';
+  return { day, stage };
+}
+
+function normalizeName(s: string) {
+  return String(s || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+// Cleans up CSV-export artifacts (stray leading/trailing quote) from the
+// description column. Component renders this as a single paragraph, so if
+// you want the "- point one / - point two" lines to actually break onto
+// separate lines, add `white-space:pre-line` to `.agenda-session-description`.
+function cleanDescription(text: any): string | undefined {
+  const x = String(text ?? '').trim();
+  if (!x || x === '….' || x === '...') return undefined;
+  return x.replace(/^"+|"+$/g, '').trim() || undefined;
+}
+
+function parsePoints(text: any): string[] | undefined {
+  const x = String(text ?? '').trim();
+  if (!x || x === '….' || x === '...') return undefined;
+  const pts = x
+    .replace(/^"+|"+$/g, '')
+    .split(/\r?\n|(?<=\S)\s*-\s+(?=[A-Z])/)
+    .map((y) => y.trim().replace(/^[-•]\s*/, ''))
+    .filter(Boolean);
+  return pts.length ? pts : undefined;
+}
+
+// ---------------------------------------------------------------------------
+// Main fetch
+// ---------------------------------------------------------------------------
+export async function getExpoAgenda(): Promise<AgendaDay[]> {
+  // Ordering: `stage_day` (e.g. "MSD1M1") encodes stage + day + module number
+  // directly in the code, so sorting on it keeps modules in the right order
+  // even if rows are edited/inserted out of original sequence later — more
+  // robust than relying on agenda_id insertion order. `position` is the
+  // secondary sort, ordering sessions correctly *within* a module (K1→K2→P1).
+  // Note: this is a plain string sort, so it assumes single-digit module
+  // numbers (M1..M9); a module 10 would need zero-padding to sort correctly.
+  const { data: rows, error } = await supabase
+    .from('agenda')
+    .select('*')
+    .eq('event_id', 'BANCEE26')
+    .order('stage_day', { ascending: true })
+    .order('position', { ascending: true });
+
+  if (error || !rows) {
+    console.error('Agenda fetch failed', error);
+    return [];
   }
-  try{
-    const {data:profiles,error}=await supabase.from('speakers').select(`id,full_name,job,link_photo,companies(company_name)`);
-    if(error||!profiles)return days;
-    const map=new Map<string,any>();const byId=new Map<string,any>();for(const p of profiles as any[]){map.set(normalize(p.full_name||''),p);if(p.id)byId.set(String(p.id),p)}
-    for(const day of days)for(const stage of day.stages)for(const mod of stage.modules)for(const session of mod.sessions)for(const person of [...session.speakers,...session.panelists]){
-      const p=(person.speaker_id&&byId.get(String(person.speaker_id)))||map.get(normalize(person.name));if(!p)continue;person.name=p.full_name||person.name;person.title=p.job||person.title||'';person.company=p.companies?.company_name||person.company||'';if(p.link_photo)person.photo_url=directDrive(p.link_photo);
+
+  // --- Collect ids to resolve ---
+  // speak_moderate -> speakers.presentation_id (used as plain speaker on
+  // Keynote/Sponsored rows, and as the Moderator on Panel Discussion rows)
+  const speakerIds = new Set<number>();
+  // panelist[] -> people.person_id (Panelist role only)
+  const personIds = new Set<number>();
+  // sponsor -> companies.company_id
+  const companyIds = new Set<number>();
+
+  for (const r of rows as any[]) {
+    if (r.speak_moderate) speakerIds.add(r.speak_moderate);
+    if (Array.isArray(r.panelist)) r.panelist.forEach((id: number) => personIds.add(id));
+    if (r.sponsor) companyIds.add(r.sponsor);
+  }
+
+const [{ data: speakers }, { data: people }] = await Promise.all([
+  speakerIds.size
+    ? supabase.from('speakers').select('presentation_id, full_name, job, company_id, link_photo').in('presentation_id', [...speakerIds])
+    : Promise.resolve({ data: [] as any[] }),
+  personIds.size
+    ? supabase.from('people').select('person_id, first_name, last_name, job_title, company_id, image').in('person_id', [...personIds])
+    : Promise.resolve({ data: [] as any[] }),
+]);
+
+// Now that we have speakers/people, add THEIR company_ids to the set too
+for (const s of speakers || []) if (s.company_id) companyIds.add(s.company_id);
+for (const p of people || []) if (p.company_id) companyIds.add(p.company_id);
+
+const [{ data: companies }, { data: allSpeakerPhotos }] = await Promise.all([
+  companyIds.size
+    ? supabase.from('companies').select('company_id, company_name, image_url').in('company_id', [...companyIds])
+    : Promise.resolve({ data: [] as any[] }),
+  supabase.from('speakers').select('full_name, link_photo'),
+]);
+
+  const companyMap = new Map<number, any>((companies || []).map((c: any) => [c.company_id, c]));
+  const speakerMap = new Map<number, any>((speakers || []).map((s: any) => [s.presentation_id, s]));
+  const peopleMap = new Map<number, any>((people || []).map((p: any) => [p.person_id, p]));
+
+  const speakerPhotoByName = new Map<string, string>();
+  for (const s of allSpeakerPhotos || []) {
+    if (s.link_photo) speakerPhotoByName.set(normalizeName(s.full_name), s.link_photo);
+  }
+
+  const speakerToPerson = (s: any, role: string): AgendaPerson => {
+    const company = s.company_id ? companyMap.get(s.company_id) : null;
+    return {
+      id: s.presentation_id,
+      name: s.full_name,
+      title: s.job || '',
+      company: company?.company_name || '',
+      photo_url: directDrive(s.link_photo),
+      role,
+    };
+  };
+
+  const personToPerson = (p: any, role: string): AgendaPerson => {
+    const company = p.company_id ? companyMap.get(p.company_id) : null;
+    const fullName = `${p.first_name || ''} ${p.last_name || ''}`.trim();
+    const matchedSpeakerPhoto = speakerPhotoByName.get(normalizeName(fullName));
+    return {
+      id: p.person_id,
+      name: fullName,
+      title: p.job_title || '',
+      company: company?.company_name || '',
+      photo_url: directDrive(matchedSpeakerPhoto || p.image),
+      role,
+    };
+  };
+
+  // --- Build days/stages/modules/sessions ---
+  const dayMap = new Map<string, AgendaDay>();
+
+  for (const r of rows as any[]) {
+    const { day, stage } = parseStageDay(r.stage_day);
+
+    if (!dayMap.has(day)) {
+      const meta = DAY_META[day] || { label: day, date: '' };
+      dayMap.set(day, { id: day, label: meta.label, date: meta.date, stages: [] });
     }
-  }catch(e){console.error('Agenda speaker enrichment failed',e)}
-  return days;
-}
+    const d = dayMap.get(day)!;
 
-export async function getExpoAgenda():Promise<AgendaDay[]> {
-  let days:AgendaDay[]=JSON.parse(JSON.stringify(agendaFallback));
-  // Production-ready path: if IT uploads Agenda.xlsx rows to Supabase, keep the
-  // table name as `agenda` or set AGENDA_TABLE. Missing table/RLS simply falls
-  // back to the bundled latest approved Agenda.xlsx snapshot.
-  try{
-    const table=process.env.AGENDA_TABLE||'agenda';
-    const {data,error}=await supabase.from(table).select('*').eq('event_id','BANCEE26');
-    if(!error&&data?.length)days=applyFlatAgendaRows(days,data);
-  }catch(e){console.error('Live agenda fetch failed; using approved fallback',e)}
-  return enrichSpeakerProfiles(days);
+    let st = d.stages.find((s) => s.id === stage);
+    if (!st) {
+      st = { id: stage, label: STAGE_LABELS[stage] || stage, opening: STAGE_OPENING[`${day}|${stage}`], modules: [] };
+      d.stages.push(st);
+    }
+
+    let mod = st.modules.find((m) => m.title === (r.theme || ''));
+    if (!mod) {
+      // module_id (e.g. "M2K1") is NOT reliably unique even within a single
+      // day+stage — the table reuses the same module_id values for a
+      // different theme in the same day+stage (e.g. Main Stage Day 2 has
+      // two separate themes that both use module_id "M2K1/M2K2/M2P1").
+      // The theme is what's actually distinct, so key off that instead.
+      const afterKey = `${day}|${stage}|${normalizeName(r.theme)}`;
+      mod = {
+        module_id: `${day}-${stage}-${normalizeName(r.theme)}`,
+        title: r.theme || '',
+        sponsor: null,
+        sessions: [],
+        after: MODULE_AFTER[afterKey],
+      };
+      st.modules.push(mod);
+    }
+
+    // Sponsor: attach the first non-null sponsor found for this module.
+    if (r.sponsor && !mod.sponsor) {
+      const company = companyMap.get(r.sponsor);
+      if (company) {
+        mod.sponsor = { name: company.company_name, logo: directDrive(company.image_url) };
+      }
+    }
+
+    const type = sessionType(r.module_type);
+
+    // speak_moderate is a Speaker on Keynote/Sponsored rows, but becomes the
+    // Moderator (pushed into panelists, not speakers) on Panel Discussion rows.
+    const speakerPerson: AgendaPerson[] =
+      type !== 'panel' && r.speak_moderate && speakerMap.has(r.speak_moderate)
+        ? [speakerToPerson(speakerMap.get(r.speak_moderate), 'Speaker')]
+        : [];
+
+    const panelistPeople: AgendaPerson[] = [];
+
+    if (type === 'panel' && r.speak_moderate && speakerMap.has(r.speak_moderate)) {
+      panelistPeople.push(speakerToPerson(speakerMap.get(r.speak_moderate), 'Moderator'));
+    }
+
+    if (Array.isArray(r.panelist)) {
+      for (const pid of r.panelist) {
+        if (peopleMap.has(pid)) panelistPeople.push(personToPerson(peopleMap.get(pid), 'Panelist'));
+      }
+    }
+
+       mod.sessions.push({
+      agenda_id: r.agenda_id,
+      time: formatTime(r.start_time),
+      end_time: formatTime(r.end_time),
+      type,
+      typeLabel: r.module_type || '',
+      title: r.title || '',
+      description: cleanDescription(r.description),
+      discussionPoints: parsePoints(r.description),
+      speakers: speakerPerson,
+      panelists: panelistPeople,
+    });
+  }
+
+  const dayOrder = ['day1', 'day2'];
+  const days = [...dayMap.values()].sort((a, b) => dayOrder.indexOf(a.id) - dayOrder.indexOf(b.id));
+  for (const d of days) {
+    const order = STAGE_ORDER_BY_DAY[d.id] || ['main', 'digital', 'impact', 'other'];
+    d.stages.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+  }
+
+  return days;
 }

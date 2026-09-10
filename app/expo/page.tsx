@@ -9,18 +9,18 @@ import { getSpeakers } from '../../lib/getSpeakers';
 
 export const metadata: Metadata = { title: 'Banking CEE Expo 2026', description: 'Banking CEE Expo 2026 in Prague brings together 250+ attendees from across Central & Eastern Europe for two days of content, networking and business conversations.' };
 const modules = [
-  'The AI-Driven Bank',
-  'Customer Experience & Personalisation',
-  'Payments & Transaction Banking',
-  'Open Banking, Open Finance & Ecosystems',
-  'Lending & Credit Transformation',
-  'Fraud, Financial Crime & Digital Identity',
-  'Cybersecurity & Operational Resilience',
-  'Core Banking, Cloud & Modernisation',
-  'Data, Analytics & Decision Intelligence',
-  'Risk, Compliance & Regulation',
-  'SME & Corporate Banking',
-  'Future Banking Models & Growth',
+  'Tech & Innovation',
+  'Regulatory Landscape',
+  'Digital Infrastructure',
+  'Core Transformation',
+  'Next-Gen Payments',
+  'Fraud & Financial Crime',
+  'CX Personalization',
+  'Lending Transformation',
+  'Cybersecurity',
+  'Global Payments & CEE',
+  'Risk, AI, and Strategy',
+  'Leadership & Transformation',
 ];
 
 const speakerPreview = [

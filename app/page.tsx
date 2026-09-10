@@ -133,12 +133,12 @@ export default async function Home() {
   </div>
   <div className="shell video-embed-wrap">
     <div className="video-embed">
-      <iframe
-        src="https://www.youtube.com/embed/f3aZWQJfxYY"
+     <iframe
+        src="https://www.youtube.com/embed/f3aZWQJfxYY?autoplay=0&loop=1&playlist=f3aZWQJfxYY&rel=0"
         title="Digital Banking CEE Summit 2026 | Bucharest – Event Highlights"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowFullScreen
+/>
     </div>
   </div>
   <div className="shell video-tagline"><span>More Than Events. A Stronger Banking Community.</span></div>
