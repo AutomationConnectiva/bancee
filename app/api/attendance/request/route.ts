@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { createDecisionToken, createRequestId, eventLabel, readRequests, sendEmail, writeRequests } from '../../../../lib/attendance';
 import { historyHtml, readPeople, findPerson, upsertPerson } from '../../../../lib/community';
-import { logSubmission } from '../../../../lib/formLog'; // ADDED
+import { logSubmission } from '../../../../lib/formLog';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {
