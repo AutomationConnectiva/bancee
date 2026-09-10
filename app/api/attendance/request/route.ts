@@ -13,6 +13,7 @@ export async function POST(req: Request) {
     if (!/^\S+@\S+\.\S+$/.test(body.email)) return NextResponse.json({ error: 'Please enter a valid business email.' }, { status: 400 });
 
     if (process.env.MAKE_ATTENDANCE_WEBHOOK_URL) {
+      await logSubmission('attendance_request', body); // ADDED
       const payload = { form_type: 'attendance_request', status: 'REQUESTED', submitted_at: new Date().toISOString(), ...body };
       const hook = await fetch(process.env.MAKE_ATTENDANCE_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       if (!hook.ok) throw new Error(`Make attendance webhook returned ${hook.status}`);

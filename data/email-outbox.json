@@ -1,1 +1,130 @@
-[]
+[
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Contact Enquiry — General Enquiry",
+    "html": "<h2>New Contact Enquiry</h2><p><strong>Connectiva Automation</strong><br><br>fiza event</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>Phone:</strong> 817364<br><strong>Interested in:</strong> General Enquiry</p><p><strong>Message:</strong> need a psy</p>",
+    "createdAt": "2026-09-10T15:40:53.326Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Contact Enquiry — General Enquiry",
+    "html": "<h2>New Contact Enquiry</h2><p><strong>Connectiva Automation</strong><br><br>fiza event</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>Phone:</strong> Not provided<br><strong>Interested in:</strong> General Enquiry</p><p><strong>Message:</strong> need psy</p>",
+    "createdAt": "2026-09-10T15:45:17.055Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Digital Banking CEE Summit 2027",
+    "html": "<h2>New Attendance Request — Digital Banking CEE Summit 2027</h2><p><strong>Connectiva Automation</strong><br>g<br>g · rez</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> summit-2027-direct</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055444653_74cd91ce7e&action=approve&expires=1789228245200&token=df53cf0bc6e774f8d0314b9117ae8c9b36bf20d6cf12553f40d71bdae9f9f68f\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055444653_74cd91ce7e&action=sponsorship&expires=1789228245200&token=ccee55453687f5d4fb1323de9f70eee9bdd2a0ee846e7eea127147a9b76591fc\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055444653_74cd91ce7e&action=decline&expires=1789228245200&token=51daf7f9fc0d89057a53017761e9ce511e7d3de9ef4ea96f796a2feef59c7ecc\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-10T15:50:45.203Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "automationconnectiva@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Digital Banking CEE Summit 2027",
+    "html": "<p>Hi Connectiva,</p><p>Thank you for your interest in Digital Banking CEE Summit 2027. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T15:50:45.206Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Banking CEE Expo 2026",
+    "html": "<h2>New Attendance Request — Banking CEE Expo 2026</h2><p><strong>Connectiva Automation</strong><br>;<br>ld · dq</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> expo-page</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055518014_e64d39ba9e&action=approve&expires=1789228319228&token=6836df2daa64c4d3836c2ba1d1173352d4b38d39ee338f8de08141cbec3d55a7\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055518014_e64d39ba9e&action=sponsorship&expires=1789228319228&token=e6be9694fdd9f73f3589f64ae496a388960c997ab39a23babf9d1d1d8c19102d\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055518014_e64d39ba9e&action=decline&expires=1789228319228&token=101bb221e32247ce0a15b6d6c9db4be5c159063f2bef60b9c73e8780eef03ac8\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-10T15:51:59.231Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "automationconnectiva@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Banking CEE Expo 2026",
+    "html": "<p>Hi Connectiva,</p><p>Thank you for your interest in Banking CEE Expo 2026. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T15:51:59.235Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Digital Banking CEE Summit 2027",
+    "html": "<h2>New Attendance Request — Digital Banking CEE Summit 2027</h2><p><strong>rea ds</strong><br>cs<br>dz · zf</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> joh@gmail.com<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> summit-page</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055590131_b5553c5bde&action=approve&expires=1789228396619&token=1b4c7c469b60bbcfd1d61b8f668f66756f9009a77c8413cdf9228b68f2d13227\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055590131_b5553c5bde&action=sponsorship&expires=1789228396619&token=1d3a31e1f5baf8bfc7307d08e960a146a5f936f5ad43a56f6da42f80ab5a4b66\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789055590131_b5553c5bde&action=decline&expires=1789228396619&token=9688388a3a8a08ceb96fd1e083ce961373e5e7758188cb94877dce9cd8e90bea\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-10T15:53:16.624Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "joh@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Digital Banking CEE Summit 2027",
+    "html": "<p>Hi rea,</p><p>Thank you for your interest in Digital Banking CEE Summit 2027. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T15:53:16.627Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Banking CEE Expo 2026",
+    "html": "<h2>New Attendance Request — Banking CEE Expo 2026</h2><p><strong>test test</strong><br>test<br>etst · tcheck</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> test@gmail.c<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> home-request-selector</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789059416344_037e2dae99&action=approve&expires=1789232219849&token=90596972f7b4bfda35111fd6fd410d4883e764065ade790fa0980141d9933654\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789059416344_037e2dae99&action=sponsorship&expires=1789232219849&token=869e485896debca9998eee832bb8bcfd6dc2e2d4903897f29433e960be057350\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789059416344_037e2dae99&action=decline&expires=1789232219849&token=fe87880cd335e5a0b641eb05b9f639c81c77635dfdf67b72997b65385b6b44b8\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-10T16:56:59.853Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "test@gmail.c",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Banking CEE Expo 2026",
+    "html": "<p>Hi test,</p><p>Thank you for your interest in Banking CEE Expo 2026. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T16:56:59.859Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Partnership Enquiry — pa",
+    "html": "<h2>New Partnership Enquiry</h2><p><strong>partner partner</strong><br>test pa<br>pa · THEB</p><p><strong>Email:</strong> pa@connectiva.events<br><strong>Phone:</strong> 098<br><strong>Website:</strong> Not provided<br><strong>Source:</strong> partners-bottom<br><strong>UTM:</strong> — / — / —</p><p><strong>Partnership interest:</strong><br>Banking CEE Expo 2026</p><p><strong>Objectives:</strong><br>Brand & Solution Visibility</p><p><strong>Solutions & expertise:</strong><br>Core Banking, Digital Transformation & Infrastructure</p>",
+    "createdAt": "2026-09-10T17:01:28.876Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "pa@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Thank you for your interest in partnering with Banking CEE",
+    "html": "<p>Hi partner,</p><p>Thank you for your interest in exploring partnership opportunities with Banking CEE.</p><p>We've received your enquiry and will review the information you shared. A member of the Connectiva team will be in touch to discuss the opportunities most relevant to your objectives.</p><p>Kind regards,<br>Connectiva Team<br>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T17:01:28.884Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Digital Banking CEE Summit 2027",
+    "html": "<h2>New Attendance Request — Digital Banking CEE Summit 2027</h2><p><strong>1² 2</strong><br>4<br>Gj · kd</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> hif@jo.shop<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> summit-page</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789059976544_8b92524f52&action=approve&expires=1789232777853&token=bd51ffdb3b4ea2b748420a4b89eab9bf9433d39b2a5c155e19efd80d1c9bd15f\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789059976544_8b92524f52&action=sponsorship&expires=1789232777853&token=5a799f2c4651b6da5d202ff5c2db940b9fc5598aaadb1983b78e16a946ed831f\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789059976544_8b92524f52&action=decline&expires=1789232777853&token=3d95ea5fec6e7f66432d84c097d9ab77232c3bad06352c23549900d713bb80e8\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-10T17:06:17.863Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "hif@jo.shop",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Digital Banking CEE Summit 2027",
+    "html": "<p>Hi 1²,</p><p>Thank you for your interest in Digital Banking CEE Summit 2027. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T17:06:17.869Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Partnership Enquiry — fiza",
+    "html": "<h2>New Partnership Enquiry</h2><p><strong>Fenohasina Mihanta Johane Ranaivomampionona</strong><br>test<br>fiza · Maurice</p><p><strong>Email:</strong> johanemihanta@gmail.com<br><strong>Phone:</strong> 57431905<br><strong>Website:</strong> Not provided<br><strong>Source:</strong> partners-bottom<br><strong>UTM:</strong> — / — / —</p><p><strong>Partnership interest:</strong><br>Banking CEE Expo 2026</p><p><strong>Objectives:</strong><br>Brand & Solution Visibility<br>Networking with Banking Decision-Makers</p><p><strong>Solutions & expertise:</strong><br>Payments & Transaction Banking<br>AI, Data & Automation</p>",
+    "createdAt": "2026-09-10T17:20:02.206Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "johanemihanta@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Thank you for your interest in partnering with Banking CEE",
+    "html": "<p>Hi Fenohasina Mihanta Johane,</p><p>Thank you for your interest in exploring partnership opportunities with Banking CEE.</p><p>We've received your enquiry and will review the information you shared. A member of the Connectiva team will be in touch to discuss the opportunities most relevant to your objectives.</p><p>Kind regards,<br>Connectiva Team<br>Banking CEE Network</p>",
+    "createdAt": "2026-09-10T17:20:02.211Z",
+    "mode": "development-outbox"
+  }
+]

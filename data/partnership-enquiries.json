@@ -1,0 +1,50 @@
+[
+  {
+    "id": "partner_1789059684699_05b490b7e2",
+    "firstName": "partner",
+    "lastName": "partner",
+    "jobTitle": "test pa",
+    "organisation": "pa",
+    "email": "pa@connectiva.events",
+    "phone": "098",
+    "country": "THEB",
+    "interests": [
+      "Banking CEE Expo 2026"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility"
+    ],
+    "expertise": [
+      "Core Banking, Digital Transformation & Infrastructure"
+    ],
+    "source": "partners-bottom",
+    "referrer": "http://localhost:3000/partners",
+    "status": "new",
+    "submittedAt": "2026-09-10T17:01:24.700Z"
+  },
+  {
+    "id": "partner_1789060798691_b4f04b651e",
+    "firstName": "Fenohasina Mihanta Johane",
+    "lastName": "Ranaivomampionona",
+    "jobTitle": "test",
+    "organisation": "fiza",
+    "email": "johanemihanta@gmail.com",
+    "phone": "57431905",
+    "country": "Maurice",
+    "interests": [
+      "Banking CEE Expo 2026"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility",
+      "Networking with Banking Decision-Makers"
+    ],
+    "expertise": [
+      "Payments & Transaction Banking",
+      "AI, Data & Automation"
+    ],
+    "source": "partners-bottom",
+    "referrer": "http://localhost:3000/partners",
+    "status": "new",
+    "submittedAt": "2026-09-10T17:19:58.692Z"
+  }
+]

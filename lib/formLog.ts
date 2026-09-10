@@ -1,4 +1,4 @@
-import { supabaseAdmin } from './supabase';
+import { supabaseAdmin } from './supabaseAdmin'; // changed path
 
 export async function logSubmission(source: string, data: Record<string, any>) {
   const { error } = await supabaseAdmin.from('form_submissions').insert({
@@ -13,5 +13,8 @@ export async function logSubmission(source: string, data: Record<string, any>) {
     message: data.message,
     details: data,
   });
-  if (error) console.error('form_submissions insert failed:', error);
+  if (error) {
+    console.error('form_submissions insert failed:', JSON.stringify(error, null, 2));
+    throw new Error(`Supabase insert failed: ${error.message}`); // remove after debugging
+  }
 }

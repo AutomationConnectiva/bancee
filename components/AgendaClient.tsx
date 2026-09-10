@@ -35,11 +35,17 @@ function Session({s}:{s:AgendaSession}){
  </div>
 }
 
+function SponsorLogo({name,logo}:{name:string;logo?:string}){
+ const [broken,setBroken]=useState(false);
+ if(!logo||broken) return null;
+ return <div className="agenda-module-partner"><small>Module Partner</small><div className="agenda-sponsor-logo"><img src={logo} alt={name} width={180} height={64} onError={()=>setBroken(true)}/></div></div>;
+}
+
 function Module({m}:{m:AgendaModule}){
  return <article className="agenda-module-card">
   <div className="agenda-module-head">
    <div><span>Thematic Module</span><h3>{m.title}</h3></div>
-   {m.sponsor&&<div className="agenda-module-partner"><small>Module Partner</small><div className="agenda-sponsor-logo"><Image src={m.sponsor.logo||'/images/agenda/sponsors/placeholder.png'} alt={m.sponsor.name} width={180} height={64}/></div></div>}
+   {m.sponsor&&<SponsorLogo name={m.sponsor.name} logo={m.sponsor.logo}/>}
   </div>
   {m.sessions.map((s)=><Session key={s.agenda_id} s={s}/>)}
  </article>
