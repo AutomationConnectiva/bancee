@@ -102,5 +102,44 @@
     "source": "agenda",
     "status": "under_review",
     "submittedAt": "2026-09-10T19:48:49.560Z"
+  },
+  {
+    "id": "ar_1789116365615_6afb911237",
+    "event": "expo-2026",
+    "firstName": "johae",
+    "lastName": "hh",
+    "jobTitle": "ihi",
+    "organisation": "hhdz",
+    "email": "ks@connectiva.evens",
+    "country": "gr",
+    "source": "expo-2026-direct",
+    "status": "under_review",
+    "submittedAt": "2026-09-11T08:46:05.616Z"
+  },
+  {
+    "id": "ar_1789116894931_e3d4b44620",
+    "event": "summit-2027",
+    "firstName": "Connectiva",
+    "lastName": "Automation",
+    "jobTitle": "k",
+    "organisation": "hj",
+    "email": "automationconnectiva@gmail.com",
+    "country": "kd",
+    "source": "summit-2027-direct",
+    "status": "under_review",
+    "submittedAt": "2026-09-11T08:54:54.932Z"
+  },
+  {
+    "id": "ar_1789118814371_3d763aa18e",
+    "event": "expo-2026",
+    "firstName": "ZAZA",
+    "lastName": "Automation",
+    "jobTitle": "ttt",
+    "organisation": "jhr",
+    "email": "automationconnectiva@gmail.com",
+    "country": "rttt",
+    "source": "expo-page",
+    "status": "under_review",
+    "submittedAt": "2026-09-11T09:26:54.372Z"
   }
 ]

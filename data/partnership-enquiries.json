@@ -70,5 +70,30 @@
     "referrer": "http://10.147.163.112:3000/expo",
     "status": "new",
     "submittedAt": "2026-09-10T19:15:08.589Z"
+  },
+  {
+    "id": "partner_1789116966456_28fb1ff533",
+    "firstName": "hkkll",
+    "lastName": "hgfd",
+    "jobTitle": "jhg",
+    "organisation": "Gj",
+    "email": "automationconnectiva@gmail.com",
+    "country": "mauritius",
+    "interests": [
+      "Banking CEE Expo 2026",
+      "Digital Banking CEE Summit 2027"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility",
+      "Thought Leadership & Speaking"
+    ],
+    "expertise": [
+      "Core Banking, Digital Transformation & Infrastructure",
+      "Payments & Transaction Banking"
+    ],
+    "source": "partners-bottom",
+    "referrer": "http://localhost:3000/partners",
+    "status": "new",
+    "submittedAt": "2026-09-11T08:56:06.456Z"
   }
 ]

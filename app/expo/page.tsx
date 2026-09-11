@@ -6,29 +6,16 @@ import RequestAttendanceForm from '../../components/RequestAttendanceForm';
 import SpeakerGrid from '../../components/SpeakerGrid';
 import TestimonialSlider from '../../components/TestimonialSlider';
 import { getLogosByIds } from '../../lib/getSponsor';
+import { getEventModules } from '../../lib/agenda';
 import { getEventSpeakers, getActiveEventIds } from '../../lib/getSpeakers';
 
 export const metadata: Metadata = { title: 'Banking CEE Expo 2026', description: 'Banking CEE Expo 2026 in Prague brings together 250+ attendees from across Central & Eastern Europe for two days of content, networking and business conversations.' };
-const modules = [
-  'Tech & Innovation',
-  'Regulatory Landscape',
-  'Digital Infrastructure',
-  'Core Transformation',
-  'Next-Gen Payments',
-  'Fraud & Financial Crime',
-  'CX Personalization',
-  'Lending Transformation',
-  'Cybersecurity',
-  'Global Payments & CEE',
-  'Risk, AI, and Strategy',
-  'Leadership & Transformation',
-];
 
 export default async function ExpoPage() {
   const { expo: expoEventId } = await getActiveEventIds();
   const speakers = expoEventId ? await getEventSpeakers(expoEventId) : [];
-  const expoLogos = await getLogosByIds([7356, 8243, 8391, 8920, 8913]);
-  console.log('DEBUG speakers:', JSON.stringify(speakers));
+  const modules = expoEventId ? await getEventModules(expoEventId) : [];
+  const expoLogos = await getLogosByIds([7356, 8243, 8391, 8920, 8913]);  console.log('DEBUG speakers:', JSON.stringify(speakers));
   console.log('DEBUG expoEventId:', expoEventId);
   return (
     <main className="expo-page" id="top">      <section className="expo-hero">

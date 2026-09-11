@@ -198,5 +198,77 @@
     "html": "<p>Hi 55,</p><p>Thank you for your interest in Banking CEE Expo 2026. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
     "createdAt": "2026-09-10T19:48:53.810Z",
     "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Banking CEE Expo 2026",
+    "html": "<h2>New Attendance Request — Banking CEE Expo 2026</h2><p><strong>johae hh</strong><br>ihi<br>hhdz · gr</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> ks@connectiva.evens<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> expo-2026-direct</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789116365615_6afb911237&action=approve&expires=1789289166769&token=9f7657c36ff74a0b0676049ced0bba6d0a9b9cd365925a43e143d012e79d2560\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789116365615_6afb911237&action=sponsorship&expires=1789289166769&token=3e9c4a0a08bbddcf9638b0fd2a9433b3b4f091b4a93b9373fa993b769158269a\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789116365615_6afb911237&action=decline&expires=1789289166769&token=5e10ae324b6bab47c2ec1fe7d858d99d8a27dcd7d92b14bbac774f1a71b86e2d\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-11T08:46:06.773Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "ks@connectiva.evens",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Banking CEE Expo 2026",
+    "html": "<p>Hi johae,</p><p>Thank you for your interest in Banking CEE Expo 2026. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-11T08:46:06.776Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Digital Banking CEE Summit 2027",
+    "html": "<h2>New Attendance Request — Digital Banking CEE Summit 2027</h2><p><strong>Connectiva Automation</strong><br>k<br>hj · kd</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> summit-2027-direct</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789116894931_e3d4b44620&action=approve&expires=1789289695323&token=f1271547055b814f584bde414f9a7736ddf3a1dedc390a6c19c21163d0efd18a\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789116894931_e3d4b44620&action=sponsorship&expires=1789289695323&token=4354a0659cd43111acf88c47bd52d8f580df74fff78895dcfa67a360c78ad7b7\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789116894931_e3d4b44620&action=decline&expires=1789289695323&token=57d163e4fe1d2c22fc3706df02334ded189dc0da0caffdceba930070f0e93f76\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-11T08:54:55.326Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "automationconnectiva@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Digital Banking CEE Summit 2027",
+    "html": "<p>Hi Connectiva,</p><p>Thank you for your interest in Digital Banking CEE Summit 2027. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-11T08:54:55.331Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Partnership Enquiry — Gj",
+    "html": "<h2>New Partnership Enquiry</h2><p><strong>hkkll hgfd</strong><br>jhg<br>Gj · mauritius</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>Phone:</strong> Not provided<br><strong>Website:</strong> Not provided<br><strong>Source:</strong> partners-bottom<br><strong>UTM:</strong> — / — / —</p><p><strong>Partnership interest:</strong><br>Banking CEE Expo 2026<br>Digital Banking CEE Summit 2027</p><p><strong>Objectives:</strong><br>Brand & Solution Visibility<br>Thought Leadership & Speaking</p><p><strong>Solutions & expertise:</strong><br>Core Banking, Digital Transformation & Infrastructure<br>Payments & Transaction Banking</p>",
+    "createdAt": "2026-09-11T08:56:07.235Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "automationconnectiva@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Thank you for your interest in partnering with Banking CEE",
+    "html": "<p>Hi hkkll,</p><p>Thank you for your interest in exploring partnership opportunities with Banking CEE.</p><p>We've received your enquiry and will review the information you shared. A member of the Connectiva team will be in touch to discuss the opportunities most relevant to your objectives.</p><p>Kind regards,<br>Connectiva Team<br>Banking CEE Network</p>",
+    "createdAt": "2026-09-11T08:56:07.238Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Contact Enquiry — Association / Industry Collaboration",
+    "html": "<h2>New Contact Enquiry</h2><p><strong>Connectiva Automation</strong><br><br>fiza event</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>Phone:</strong> Not provided<br><strong>Interested in:</strong> Association / Industry Collaboration</p><p><strong>Message:</strong> hiii</p>",
+    "createdAt": "2026-09-11T08:58:11.071Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Banking CEE Expo 2026",
+    "html": "<h2>New Attendance Request — Banking CEE Expo 2026</h2><p><strong>ZAZA Automation</strong><br>ttt<br>jhr · rttt</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> automationconnectiva@gmail.com<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> expo-page</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789118814371_3d763aa18e&action=approve&expires=1789291615244&token=4f4be3d6be4900ee2a02e34c561255e609fc47e40b2e5d5a85524a3a0c378397\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789118814371_3d763aa18e&action=sponsorship&expires=1789291615244&token=887e64e42029c710ea52ccdeb9911e2e251a1469f73847ca778d7e66e2b4fcf2\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789118814371_3d763aa18e&action=decline&expires=1789291615244&token=0a3a3c34f34354157a33fab5e364ccfbd685943f65ad7844bbdba74294a0515e\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-11T09:26:55.249Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "automationconnectiva@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Banking CEE Expo 2026",
+    "html": "<p>Hi ZAZA,</p><p>Thank you for your interest in Banking CEE Expo 2026. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-11T09:26:55.253Z",
+    "mode": "development-outbox"
   }
 ]

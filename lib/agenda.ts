@@ -44,6 +44,28 @@ export type AgendaDay = {
   stages: AgendaStage[];
 };
 
+export async function getEventModules(eventId: string): Promise<string[]> {
+  const { data, error } = await supabase
+    .from('agenda')
+    .select('theme, agenda_id')
+    .eq('event_id', eventId)
+    .order('agenda_id', { ascending: true });
+
+  if (error || !data) {
+    console.error('Error fetching event modules', error);
+    return [];
+  }
+
+  const seen = new Set<string>();
+  const modules: string[] = [];
+  for (const row of data as any[]) {
+    if (row.theme && !seen.has(row.theme)) {
+      seen.add(row.theme);
+      modules.push(row.theme);
+    }
+  }
+  return modules;
+}
 // ---------------------------------------------------------------------------
 // Static structural content — NOT in the `agenda` table (no source column
 // for ceremony/break timings or the calendar date). Edit these directly;
