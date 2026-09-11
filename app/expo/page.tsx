@@ -5,8 +5,8 @@ import Footer from '../../components/Footer';
 import RequestAttendanceForm from '../../components/RequestAttendanceForm';
 import SpeakerGrid from '../../components/SpeakerGrid';
 import TestimonialSlider from '../../components/TestimonialSlider';
-import { getSpeakers } from '../../lib/getSpeakers';
 import { getLogosByIds } from '../../lib/getSponsor';
+import { getEventSpeakers, getActiveEventIds } from '../../lib/getSpeakers';
 
 export const metadata: Metadata = { title: 'Banking CEE Expo 2026', description: 'Banking CEE Expo 2026 in Prague brings together 250+ attendees from across Central & Eastern Europe for two days of content, networking and business conversations.' };
 const modules = [
@@ -25,11 +25,13 @@ const modules = [
 ];
 
 export default async function ExpoPage() {
-  const speakers = await getSpeakers('expo');
-  const expoLogos = await getLogosByIds([7356, 8243, 8391, 8920, 8913]); // Authologic, Evrotrust, ERI, Tieto, Guardsquare
+  const { expo: expoEventId } = await getActiveEventIds();
+  const speakers = expoEventId ? await getEventSpeakers(expoEventId) : [];
+  const expoLogos = await getLogosByIds([7356, 8243, 8391, 8920, 8913]);
+  console.log('DEBUG speakers:', JSON.stringify(speakers));
+  console.log('DEBUG expoEventId:', expoEventId);
   return (
-    <main className="expo-page" id="top">
-      <section className="expo-hero">
+    <main className="expo-page" id="top">      <section className="expo-hero">
         <Header variant="expo" activePage="expo" ctaLabel="Request Attendance" ctaHref="/request-attendance?event=expo-2026" />
         <div className="expo-hero-media" aria-hidden="true">
           <Image src="/images/expo-2025-hero.jpg" alt="" fill priority className="cover expo-hero-image" />

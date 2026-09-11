@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Header from '../components/Header';
 import TestimonialSlider from '../components/TestimonialSlider';
 import AdvisoryGrid from '../components/AdvisoryGrid';
-import { getSpeakers } from '../lib/getSpeakers';
+import { getAdvisors } from '../lib/getSpeakers';
 import Footer from '../components/Footer';
 import AudienceSplit from '../components/AudienceSplit';
 
@@ -27,7 +27,7 @@ const testimonials: [string, string, string][] = [
 ];
 
 export default async function Home() {
-  const advisory = await getSpeakers('advisory');
+  const advisory = await getAdvisors();
   return (
     <main id="top">
       <section className="hero">

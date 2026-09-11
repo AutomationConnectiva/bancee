@@ -6,42 +6,88 @@ function toDirectDriveUrl(url: string) {
   return match ? `https://lh3.googleusercontent.com/d/${match[1]}` : url;
 }
 
-export async function getSpeakers(context: 'expo' | 'summit' | 'advisory'): Promise<Speaker[]> {
-  const visibilityColumn = context === 'expo' ? 'show_on_expo' : context === 'summit' ? 'show_on_summit' : 'show_on_advisory';
-  const orderColumn = context === 'expo' ? 'display_order' : context === 'summit' ? 'display_order_summit' : 'display_order_advisory';
-
-  let query = supabase
-    .from('speakers')
-    .select(`
-      full_name,
-      job,
-      link_photo,
-      advisory_photo,
-      display_order,
-      display_order_summit,
-      display_order_advisory,
-      companies ( company_name )
-    `)
-    .eq(visibilityColumn, true);
-
-  if (context === 'summit') {
-    query = query.eq('summit_year', 2026);
+export async function getActiveEventIds(): Promise<{ expo: string | null; summit: string | null }> {
+  const { data, error } = await supabase
+    .from('systems_tables')
+    .select('config1, config2')
+    .eq('system_name', 'active_events')
+    .single();
+  if (error || !data) {
+    console.error('Failed to fetch active event config', error);
+    return { expo: null, summit: null };
   }
+  return { expo: data.config1, summit: data.config2 };
+}
 
-  const { data, error } = await query.order(orderColumn, { ascending: true, nullsFirst: false });
+export async function getEventSpeakers(eventId: string): Promise<Speaker[]> {
+  const { data: participants, error: partError } = await supabase
+    .from('event_participants')
+    .select('person_id, display_order')
+    .eq('event_id', eventId)
+    .eq('status', 'Confirmed')
+    .in('role', ['Speaker', 'Moderator', 'Panelist'])
+    .order('display_order', { ascending: true, nullsFirst: false });
 
-  if (error) {
-    console.error('Error fetching speakers:', error);
+  if (partError || !participants || participants.length === 0) {
+    console.error('Error fetching event participants:', partError);
     return [];
   }
 
-  return data.map((s: any) => {
-    const photoSource = context === 'advisory' ? s.advisory_photo : s.link_photo;
-    return {
-      name: s.full_name,
-      title: s.job ?? '',
-      org: s.companies?.company_name ?? '',
-      image: photoSource ? toDirectDriveUrl(photoSource) : '/images/placeholder-speaker.jpg',
-    };
-  });
+  const personIds = participants.map((p: any) => p.person_id);
+
+  const { data: people, error: peopleError } = await supabase
+    .from('people')
+    .select('person_id, first_name, last_name, job_title, image, company_id')
+    .in('person_id', personIds);
+
+  if (peopleError || !people) {
+    console.error('Error fetching people:', peopleError);
+    return [];
+  }
+
+  const companyIds = people.map((p: any) => p.company_id).filter(Boolean);
+  const { data: companies } = await supabase
+    .from('companies')
+    .select('company_id, company_name')
+    .in('company_id', companyIds.length ? companyIds : [0]);
+
+  const companyMap = new Map((companies || []).map((c: any) => [c.company_id, c.company_name]));
+  const peopleMap = new Map(people.map((p: any) => [p.person_id, p]));
+
+  return participants
+    .map((part: any) => peopleMap.get(part.person_id))
+    .filter(Boolean)
+    .map((p: any) => ({
+      name: `${p.first_name || ''} ${p.last_name || ''}`.trim(),
+      title: p.job_title ?? '',
+      org: p.company_id ? (companyMap.get(p.company_id) ?? '') : '',
+      image: p.image ? toDirectDriveUrl(p.image) : '/images/placeholder-speaker.jpg',
+    }));
+}
+
+export async function getAdvisors(): Promise<Speaker[]> {
+  const { data, error } = await supabase
+    .from('people')
+    .select(`
+      first_name,
+      last_name,
+      job_title,
+      image,
+      abm_order,
+      companies ( company_name )
+    `)
+    .eq('lead_purpose', 'ABM')
+    .order('abm_order', { ascending: true, nullsFirst: false });
+
+  if (error) {
+    console.error('Error fetching advisors:', error);
+    return [];
+  }
+
+  return data.map((p: any) => ({
+    name: `${p.first_name || ''} ${p.last_name || ''}`.trim(),
+    title: p.job_title ?? '',
+    org: p.companies?.company_name ?? '',
+    image: p.image ? toDirectDriveUrl(p.image) : '/images/placeholder-speaker.jpg',
+  }));
 }

@@ -25,8 +25,7 @@ export async function POST(req: Request) {
       id: createRequestId(), event: body.event, firstName: String(body.firstName).trim(), lastName: String(body.lastName).trim(), jobTitle: String(body.jobTitle).trim(), organisation: String(body.organisation).trim(), email: String(body.email).trim(), country: String(body.country).trim(), linkedin: body.linkedin ? String(body.linkedin).trim() : undefined, message: body.message ? String(body.message).trim() : undefined, source: body.source || 'website', status: 'under_review' as const, submittedAt: new Date().toISOString()
     };
     const all = await readRequests(); all.push(item); await writeRequests(all);
-    await logSubmission('attendance_request', item); // ADDED
-    const people = await readPeople(); const existingPerson = findPerson(people,item); await upsertPerson(item);
+    await logSubmission(item.event === 'summit-2027' ? 'summit_request_attendance' : 'expo_request_attendance', item);    const people = await readPeople(); const existingPerson = findPerson(people,item); await upsertPerson(item);
 
     const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
     const expires = Date.now() + 1000 * 60 * 60 * 48;

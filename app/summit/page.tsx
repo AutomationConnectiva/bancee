@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import RequestAttendanceForm from '../../components/RequestAttendanceForm';
 import SpeakerGrid from '../../components/SpeakerGrid';
 import TestimonialSlider from '../../components/TestimonialSlider';
-import { getSpeakers } from '../../lib/getSpeakers';
+import { getEventSpeakers, getActiveEventIds } from '../../lib/getSpeakers';
 import { getLogosByIds } from '../../lib/getSponsor';
 
 export const metadata: Metadata = { title: 'Digital Banking CEE Summit 2027', description: 'A focused senior-level gathering for 100 banking executives shaping digital banking across Central & Eastern Europe.' };
@@ -20,7 +20,8 @@ const modules = [
 ];
 
 export default async function SummitPage() {
-  const speakers = await getSpeakers('summit');
+  const { summit: summitEventId } = await getActiveEventIds();
+  const speakers = summitEventId ? await getEventSpeakers(summitEventId) : [];
   const summitLogos = await getLogosByIds([8243, 8391, 2050, 7356, 8127, 823]); // Evrotrust, ERI, Salesforce, Authologic, fme, OneSpan
   return (
     <main className="summit-page" id="top">
