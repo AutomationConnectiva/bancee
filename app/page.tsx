@@ -6,9 +6,6 @@ import { getAdvisors } from '../lib/getSpeakers';
 import Footer from '../components/Footer';
 import AudienceSplit from '../components/AudienceSplit';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
 const stats = [
   ['15+', 'Events'],
   ['20+', 'CEE Countries'],

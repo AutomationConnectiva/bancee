@@ -21,7 +21,7 @@ export default async function ExpoPage() {
     <main className="expo-page" id="top">      <section className="expo-hero">
         <Header variant="expo" activePage="expo" ctaLabel="Request Attendance" ctaHref="/request-attendance?event=expo-2026" />
         <div className="expo-hero-media" aria-hidden="true">
-          <Image src="/images/expo-2025-hero.jpg" alt="" fill priority className="cover expo-hero-image" />
+          <Image src="/images/expo-2025-hero.webp" alt="" fill priority className="cover expo-hero-image" />
           <div className="expo-hero-overlay" />
         </div>
         <div className="shell expo-hero-content">
@@ -64,10 +64,10 @@ export default async function ExpoPage() {
           <p className="section-intro">Banking CEE Expo is designed around the conversations that happen between sessions — from focused one-to-one meetings and sponsor activations to informal networking and the evening programme.</p>
         </div>
         <div className="shell expo-story-grid">
-          <figure className="story story-main"><Image src="/images/expo-business-2024.jpg" alt="Banking CEE Expo business conversation" fill className="cover" /><figcaption>Meaningful business conversations</figcaption></figure>
-          <figure className="story"><Image src="/images/expo-2025-tietoevry-activation.jpg" alt="Banking CEE Expo technology partner activation" fill className="cover" /><figcaption>Premium partner presence</figcaption></figure>
-          <figure className="story"><Image src="/images/expo-networking-2024.jpg" alt="Banking CEE Expo networking" fill className="cover" /><figcaption>Relationships beyond the stage</figcaption></figure>
-          <figure className="story story-wide"><Image src="/images/expo-2025-audience-applause.jpg" alt="Banking CEE Expo audience" fill className="cover" /><figcaption>A community that returns year after year</figcaption></figure>
+          <figure className="story story-main"><Image src="/images/expo-business-2024.webp" alt="Banking CEE Expo business conversation" fill className="cover" /><figcaption>Meaningful business conversations</figcaption></figure>
+          <figure className="story"><Image src="/images/expo-2025-tietoevry-activation.webp" alt="Banking CEE Expo technology partner activation" fill className="cover" /><figcaption>Premium partner presence</figcaption></figure>
+          <figure className="story"><Image src="/images/expo-networking-2024.webp" alt="Banking CEE Expo networking" fill className="cover" /><figcaption>Relationships beyond the stage</figcaption></figure>
+          <figure className="story story-wide"><Image src="/images/expo-2025-audience-applause.webp" alt="Banking CEE Expo audience" fill className="cover" /><figcaption>A community that returns year after year</figcaption></figure>
         </div>
         <div className="shell event-testimonial-wrap"><TestimonialSlider items={[
           ['From vendors and bankers to speakers and panelists, the level of expertise throughout the event is truly premium. Combined with a high standard of organization, it delivers a consistently top-quality experience.','Danijela Vuksanović','Addiko Bank'],
