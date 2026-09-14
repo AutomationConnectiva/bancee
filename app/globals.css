@@ -494,7 +494,7 @@ body{overflow-x:hidden}.menu-open{overflow:hidden}.premium-reveal{opacity:0;tran
 .premium-registration>section{padding-top:34px;padding-bottom:34px}
 
 /* 20: Agenda uses global site chrome while remaining unlisted/noindex. */
-.expo-agenda-page .agenda-hero .site-header{position:relative;z-index:20}
+.expo-agenda-page .agenda-hero .site-header{position:fixed;z-index:20}
 .expo-agenda-page .agenda-hero-inner{padding-top:72px}
 
 /* 21: Agenda speaker imagery: use robust square portrait treatment + graceful fallback. */

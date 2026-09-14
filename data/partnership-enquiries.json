@@ -95,5 +95,54 @@
     "referrer": "http://localhost:3000/partners",
     "status": "new",
     "submittedAt": "2026-09-11T08:56:06.456Z"
+  },
+  {
+    "id": "partner_1789372139929_19c3d00e32",
+    "firstName": "test today",
+    "lastName": "test today",
+    "jobTitle": "test job",
+    "organisation": "ejhvc",
+    "email": "karen@gmail.com",
+    "phone": "57431905",
+    "country": "Maurice",
+    "interests": [
+      "Banking CEE Expo 2026",
+      "Tailored Events & Webinars"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility",
+      "Thought Leadership & Speaking"
+    ],
+    "expertise": [
+      "Payments & Transaction Banking"
+    ],
+    "message": "help",
+    "source": "partnership-enquiry",
+    "referrer": "http://localhost:3000/",
+    "status": "new",
+    "submittedAt": "2026-09-14T07:48:59.929Z"
+  },
+  {
+    "id": "partner_1789372275820_1063877fe9",
+    "firstName": "999",
+    "lastName": "9999",
+    "jobTitle": "9999",
+    "organisation": "9999",
+    "email": "johanemihanta@gmail.com",
+    "phone": "57431905",
+    "country": "0",
+    "interests": [
+      "Banking CEE Expo 2026"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility"
+    ],
+    "expertise": [
+      "Customer Experience & Digital Engagement"
+    ],
+    "source": "partners-bottom",
+    "referrer": "http://localhost:3000/partners",
+    "status": "new",
+    "submittedAt": "2026-09-14T07:51:15.820Z"
   }
 ]

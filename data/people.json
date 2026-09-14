@@ -94,5 +94,17 @@
     "participation": [],
     "createdAt": "2026-09-11T08:46:06.767Z",
     "updatedAt": "2026-09-11T08:46:06.767Z"
+  },
+  {
+    "id": "person_6ebacd8cedff",
+    "firstName": "today",
+    "lastName": "today",
+    "organisation": "fiza",
+    "jobTitle": "today",
+    "email": "johanemihanta@gmail.com",
+    "country": "Maurice",
+    "participation": [],
+    "createdAt": "2026-09-14T07:44:47.539Z",
+    "updatedAt": "2026-09-14T07:44:47.539Z"
   }
 ]

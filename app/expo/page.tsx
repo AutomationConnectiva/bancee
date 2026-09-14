@@ -119,12 +119,12 @@ export default async function ExpoPage() {
           <p className="sponsor-tier-label">Silver Sponsors</p>
           <div className="sponsor-logo-grid">
             <div><img src={expoLogos[8243]} alt="Evrotrust" width={240} height={140} /></div>
-            <div><img src={expoLogos[8391]} alt="ERI" width={240} height={140} /></div>
+            <div><img src={expoLogos[8878]} alt="ERI" width={240} height={140} /></div>
             <div><img src={expoLogos[8920]} alt="Tieto Banktech" width={240} height={140} /></div>
             <div><img src={expoLogos[8913]} alt="Guardsquare" width={240} height={140} className="logo-larger" /></div>
           </div>
         </div>
-        <div className="shell sponsor-cta"><a className="btn expo-dark-btn" href="/partnership-enquiry?event=expo-2026&source=expo-sponsors">Explore Partnership Opportunities</a><span>info@bancee.eu</span></div>
+        <div className="shell sponsor-cta"><a className="btn expo-dark-btn" href="/partnership-enquiry?event=expo-2026&source=expo-sponsors">Explore Partnership Opportunities</a></div>
       </section>
 
       <Footer/>

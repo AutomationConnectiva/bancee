@@ -33,7 +33,7 @@ export default async function Home() {
       <section className="hero">
         <Header />
         <div className="hero-media" aria-hidden="true">
-          <Image src="/images/summit-networking.jpg" alt="" fill priority className="cover" />
+          <Image src="/images/summit-networking.webp" alt="" fill priority className="cover" />
           <div className="hero-overlay" />
         </div>
         <div className="hero-content shell">
@@ -92,11 +92,11 @@ export default async function Home() {
         <div className="shell"><p className="eyebrow dark">Our Events</p><h2 className="section-heading-lines"><span>One Network.</span><span>Two Distinct Experiences.</span></h2></div>
         <div className="shell event-grid">
           <article className="event-card expo-card">
-            <Image src="/images/expo-stage.jpg" alt="Banking CEE Expo audience and stage" fill className="cover" />
+            <Image src="/images/expo-stage.webp" alt="Banking CEE Expo audience and stage" fill className="cover" />
             <div className="event-shade"/><div className="event-content"><span>Banking CEE Expo — Breadth</span><h3>Banking CEE Expo</h3><p>Scale, breadth and business interaction across multiple stages, networking formats and partner activations.</p><div className="event-stats"><b>250+ <small>Attendees</small></b><b>3 <small>Stages</small></b><b>18+ <small>Hours of Content</small></b></div><a href="/expo">Explore Expo →</a></div>
           </article>
           <article className="event-card summit-card">
-            <Image src="/images/summit-community.jpg" alt="Digital Banking CEE Summit community" fill className="cover" />
+            <Image src="/images/summit-community.webp" alt="Digital Banking CEE Summit community" fill className="cover" />
             <div className="event-shade"/><div className="event-content"><span>Digital Banking CEE Summit — Depth</span><h3>Digital Banking CEE Summit</h3><p>A more intimate, senior-level environment for focused digital banking conversations and closer executive networking.</p><div className="event-stats"><b>100 <small>Attendees</small></b><b>1 <small>Main Stage</small></b><b>75%+ <small>C-Level, Directors & Heads</small></b></div><a href="/summit">Explore Summit →</a></div>
           </article>
         </div>
@@ -110,10 +110,10 @@ export default async function Home() {
       <section className="experience section-white">
         <div className="shell"><p className="eyebrow dark">The Banking CEE Experience</p><h2>See What Banking CEE Feels Like.</h2></div>
         <div className="shell photo-grid">
-          <div className="photo photo-lg"><Image src="/images/expo-audience.jpg" alt="Banking CEE audience" fill className="cover" /></div>
-          <div className="photo"><Image src="/images/summit-networking.jpg" alt="Banking CEE networking" fill className="cover" /></div>
-          <div className="photo"><Image src="/images/expo-sponsor.jpg" alt="Banking CEE sponsor activation" fill className="cover" /></div>
-          <div className="photo photo-wide"><Image src="/images/summit-panel.jpg" alt="Digital Banking CEE Summit panel" fill className="cover" /></div>
+          <div className="photo photo-lg"><Image src="/images/expo-audience.webp" alt="Banking CEE audience" fill className="cover" /></div>
+          <div className="photo"><Image src="/images/summit-networking1.webp" alt="Banking CEE networking" fill className="cover" /></div>
+          <div className="photo"><Image src="/images/expo-sponsor.webp" alt="Banking CEE sponsor activation" fill className="cover" /></div>
+          <div className="photo photo-wide"><Image src="/images/summit-panel.webp" alt="Digital Banking CEE Summit panel" fill className="cover" /></div>
         </div>
         <div className="shell testimonial-wrap">
           <p className="eyebrow dark">In Their Words</p>
