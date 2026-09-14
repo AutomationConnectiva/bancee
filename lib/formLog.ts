@@ -1,7 +1,8 @@
 import { supabaseAdmin } from './supabaseAdmin';
 
 export async function logSubmission(source: string, data: Record<string, any>) {
-  const { error } = await supabaseAdmin.from('form_submissions').insert({
+  console.log('=== logSubmission CALLED ===', source);
+  const { error, data: inserted } = await supabaseAdmin.from('form_submissions').insert({
     source,
     first_name: data.firstName,
     last_name: data.lastName,
@@ -12,14 +13,14 @@ export async function logSubmission(source: string, data: Record<string, any>) {
     country: data.country,
     website: data.website,
     message: data.message,
+    linkedin: data.linkedin,
     partnership_interests: data.interests,
     partnership_objectives: data.objectives,
     partnership_expertise: data.expertise,
     event_name: data.event,
-    utm_source: data.utmSource,
-    utm_medium: data.utmMedium,
-    utm_campaign: data.utmCampaign,
-    referrer: data.referrer,
-  });
-  if (error) console.error('form_submissions insert failed:', error);
+    speaker_topics: data.topics,
+    speaker_contributions: data.contributions,
+    proposed_topic: data.topic,
+  }).select();
+  console.log('=== INSERT RESULT ===', JSON.stringify({ error, inserted }));
 }

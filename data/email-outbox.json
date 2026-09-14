@@ -318,5 +318,45 @@
     "html": "<p>Hi 999,</p><p>Thank you for your interest in exploring partnership opportunities with Banking CEE.</p><p>We've received your enquiry and will review the information you shared. A member of the Connectiva team will be in touch to discuss the opportunities most relevant to your objectives.</p><p>Kind regards,<br>Connectiva Team<br>Banking CEE Network</p>",
     "createdAt": "2026-09-14T07:51:16.607Z",
     "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Partnership Enquiry — IIII",
+    "html": "<h2>New Partnership Enquiry</h2><p><strong>HI III</strong><br>OOO<br>IIII · spain</p><p><strong>Email:</strong> OOOII@gmail.com<br><strong>Phone:</strong> 57431098<br><strong>Website:</strong> Not provided<br><strong>Source:</strong> partnership-enquiry<br><strong>UTM:</strong> — / — / —</p><p><strong>Partnership interest:</strong><br>Banking CEE Expo 2026<br>Tailored Events & Webinars<br>Digital Banking CEE Summit 2027</p><p><strong>Objectives:</strong><br>Brand & Solution Visibility</p><p><strong>Solutions & expertise:</strong><br>Core Banking, Digital Transformation & Infrastructure<br>Payments & Transaction Banking</p>",
+    "createdAt": "2026-09-14T08:33:09.311Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "OOOII@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Thank you for your interest in partnering with Banking CEE",
+    "html": "<p>Hi HI,</p><p>Thank you for your interest in exploring partnership opportunities with Banking CEE.</p><p>We've received your enquiry and will review the information you shared. A member of the Connectiva team will be in touch to discuss the opportunities most relevant to your objectives.</p><p>Kind regards,<br>Connectiva Team<br>Banking CEE Network</p>",
+    "createdAt": "2026-09-14T08:33:09.322Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Contact Enquiry — Association / Industry Collaboration",
+    "html": "<h2>New Contact Enquiry</h2><p><strong>5test 5test</strong><br>5quaare<br>5test</p><p><strong>Email:</strong> 5quare@gmail.com<br><strong>Phone:</strong> 45667<br><strong>Interested in:</strong> Association / Industry Collaboration</p><p><strong>Message:</strong> this is a test</p>",
+    "createdAt": "2026-09-14T09:02:34.218Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "mohamad@connectiva.events",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "New Attendance Request — Digital Banking CEE Summit 2027",
+    "html": "<h2>New Attendance Request — Digital Banking CEE Summit 2027</h2><p><strong>6eaus 6eaus</strong><br>69<br>69 · SUISSE</p><p><strong>Banking CEE History:</strong><br>No previous Banking CEE participation found.</p><p><strong>Email:</strong> 6@gmail.com<br><strong>LinkedIn:</strong> Not provided<br><strong>Source:</strong> home-request-selector</p><p><a href=\"http://localhost:3000/api/attendance/review?id=ar_1789376647740_96e1cfad56&action=approve&expires=1789549449278&token=ba54c96c4c62f0e6bf344112e30e703f809dd9d0f134fee7bac122ed05f8e22b\" style=\"padding:12px 18px;background:#53ef7a;color:#071b35;text-decoration:none;font-weight:700\">APPROVE PARTICIPATION</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789376647740_96e1cfad56&action=sponsorship&expires=1789549449278&token=a75a1d01474a6c14e3d0c879ff487313211d28beba6166ea185d9a3fc5768abd\" style=\"padding:12px 18px;background:#dce9ff;color:#071b35;text-decoration:none;font-weight:700\">SPONSORSHIP OPPORTUNITY</a>&nbsp;&nbsp;<a href=\"http://localhost:3000/api/attendance/review?id=ar_1789376647740_96e1cfad56&action=decline&expires=1789549449278&token=0644c2dc1f6aa0fa65acf042ab0e477b95a4c503e58b20e5012242cf91f73551\" style=\"padding:12px 18px;background:#eceff2;color:#071b35;text-decoration:none;font-weight:700\">DECLINE / NOT QUALIFIED</a></p>",
+    "createdAt": "2026-09-14T09:04:09.309Z",
+    "mode": "development-outbox"
+  },
+  {
+    "to": "6@gmail.com",
+    "from": "Banking CEE Network <info@bancee.eu>",
+    "subject": "Attendance Request Received — Digital Banking CEE Summit 2027",
+    "html": "<p>Hi 6eaus,</p><p>Thank you for your interest in Digital Banking CEE Summit 2027. Our team will review your request and get back to you shortly.</p><p>Submitting a request does not automatically confirm attendance.</p><p>Banking CEE Network</p>",
+    "createdAt": "2026-09-14T09:04:09.338Z",
+    "mode": "development-outbox"
   }
 ]

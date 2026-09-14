@@ -144,5 +144,31 @@
     "referrer": "http://localhost:3000/partners",
     "status": "new",
     "submittedAt": "2026-09-14T07:51:15.820Z"
+  },
+  {
+    "id": "partner_1789374788166_17f41446d4",
+    "firstName": "HI",
+    "lastName": "III",
+    "jobTitle": "OOO",
+    "organisation": "IIII",
+    "email": "OOOII@gmail.com",
+    "phone": "57431098",
+    "country": "spain",
+    "interests": [
+      "Banking CEE Expo 2026",
+      "Tailored Events & Webinars",
+      "Digital Banking CEE Summit 2027"
+    ],
+    "objectives": [
+      "Brand & Solution Visibility"
+    ],
+    "expertise": [
+      "Core Banking, Digital Transformation & Infrastructure",
+      "Payments & Transaction Banking"
+    ],
+    "source": "partnership-enquiry",
+    "referrer": "http://localhost:3000/speaker-interest",
+    "status": "new",
+    "submittedAt": "2026-09-14T08:33:08.167Z"
   }
 ]

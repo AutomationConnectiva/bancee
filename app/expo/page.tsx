@@ -55,7 +55,6 @@ export default async function ExpoPage() {
         <div className="shell module-grid">
           {modules.map((module, index) => <article key={module}><span>{String(index + 1).padStart(2, '0')}</span><h3>{module}</h3></article>)}
         </div>
-        <div className="shell agenda-note"><p>The website intentionally presents the agenda at module level. Full session details can be connected to the event CMS as the programme develops.</p></div>
       </section>
 
       <section id="experience" className="section-white expo-experience">
