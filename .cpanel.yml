@@ -1,0 +1,4 @@
+
+export DEPLOYPATH=/home/banctnnx/public_html
+/bin/rsync -av --exclude='.git' /home/banctnnx/repositories/bancee/ $DEPLOYPATH/
+/bin/chmod -R 755 $DEPLOYPATH/
