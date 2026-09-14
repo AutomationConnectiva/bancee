@@ -4200,5 +4200,3 @@ Error: Could not find a production build in the '.next' directory. Try building 
     at async NextCustomServer.prepare (/home/banctnnx/nodevenv/repositories/bancee/22/lib/node_modules/next/dist/server/next.js:287:28)
 
 Node.js v22.23.2
-[Error: Failed to find Server Action "y". This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action]
