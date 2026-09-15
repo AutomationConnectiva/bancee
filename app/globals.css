@@ -16,7 +16,7 @@ html,body{overflow-x:hidden;width:100%}
 @keyframes skeletonShine{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .logo-fallback-text{display:flex;align-items:center;justify-content:center;height:100%;padding:8px;text-align:center;font-size:.78rem;font-weight:700;color:#5a6877}
 .journey .section-heading-lines {
-  font-size: clamp(2.2rem, 4vw, 3.6rem) !important;
+  font-size: clamp(2.8rem, 5vw, 4rem) !important;
 }
 @media(max-width:720px){
   .map-card {
@@ -31,7 +31,8 @@ html,body{overflow-x:hidden;width:100%}
   position: relative;
   border: none;
   background: none;
-  overflow: hidden;
+  overflow: visible;
+  transform: translateX(-100px);
 }
 .nav a.active{opacity:1}
 .nav a.active:after{right:0}

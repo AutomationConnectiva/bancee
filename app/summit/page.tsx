@@ -22,7 +22,7 @@ const modules = [
 export default async function SummitPage() {
   const { summit: summitEventId } = await getActiveEventIds();
   const speakers = summitEventId ? await getEventSpeakers(summitEventId) : [];
-  const summitLogos = await getLogosByIds([8243, 8391, 2050, 7356, 8127, 823]); // Evrotrust, ERI, Salesforce, Authologic, fme, OneSpan
+  const summitLogos = await getLogosByIds([8243, 8878, 2050, 7356, 8127, 823]); // Evrotrust, ERI, Salesforce, Authologic, fme, OneSpan
   return (
     <main className="summit-page" id="top">
       <section className="summit-hero">
@@ -78,10 +78,10 @@ export default async function SummitPage() {
           <p className="section-intro">The Summit is deliberately smaller and more personal than the Expo. Networking is not a break between sessions — it is a core part of the experience.</p>
         </div>
         <div className="shell summit-story-grid">
-          <figure className="summit-story summit-story-main"><Image src="/images/summit-2026-one-to-one.jpg" alt="One-to-one meeting at the Digital Banking CEE Summit" fill className="cover" /><figcaption>Focused one-to-one conversations</figcaption></figure>
-          <figure className="summit-story"><Image src="/images/summit-2026-community.jpg" alt="Digital Banking CEE Summit community" fill className="cover" /><figcaption>A senior regional community</figcaption></figure>
-          <figure className="summit-story"><Image src="/images/summit-2026-audience.jpg" alt="Digital Banking CEE Summit audience" fill className="cover" /><figcaption>Engaged, practical discussion</figcaption></figure>
-          <figure className="summit-story summit-story-wide"><Image src="/images/summit-2026-human.jpg" alt="Digital Banking CEE Summit participants sharing a relaxed moment" fill className="cover" /><figcaption>Relationships beyond the programme</figcaption></figure>
+          <figure className="summit-story summit-story-main"><Image src="/images/focused-conversations.webp" alt="One-to-one meeting at the Digital Banking CEE Summit" fill className="cover" /><figcaption>Focused one-to-one conversations</figcaption></figure>
+          <figure className="summit-story"><Image src="/images/senior-regional-community.webp" alt="Digital Banking CEE Summit community" fill className="cover" /><figcaption>A senior regional community</figcaption></figure>
+          <figure className="summit-story"><Image src="/images/engaged-practical-discussion.webp" alt="Digital Banking CEE Summit audience" fill className="cover" /><figcaption>Engaged, practical discussion</figcaption></figure>
+          <figure className="summit-story summit-story-wide"><Image src="/images/relationships-beyond-programme.webp" alt="Digital Banking CEE Summit participants sharing a relaxed moment" fill className="cover" /><figcaption>Relationships beyond the programme</figcaption></figure>
         </div>
         <div className="shell event-testimonial-wrap"><TestimonialSlider items={[
           ['From vendors and bankers to speakers and panelists, the level of expertise throughout the event is truly premium. Combined with a high standard of organization, it delivers a consistently top-quality experience.','Danijela Vuksanović','Addiko Bank'],
@@ -121,12 +121,17 @@ export default async function SummitPage() {
           <div><p className="eyebrow dark">Sponsors</p><h2>Partnership With Purpose.</h2></div>
           <p className="section-intro">Summit partnerships are designed for technology companies that want relevant visibility and direct engagement with a concentrated senior banking audience.</p>
         </div>
+        <div className="shell sponsor-visuals">
+          <div className="sponsor-visual"><Image src="/images/summit-partner1.webp" alt="Partner 1" fill className="cover" /></div>
+          <div className="sponsor-visual"><Image src="/images/summit-partner2.webp" alt="Partner 2" fill className="cover" /></div>
+        </div>
+
         <div className="shell confirmed-sponsor-block">
           <p className="sponsor-history-note">2026 Sponsors</p>
           <p className="sponsor-tier-label">Silver Sponsors</p>
           <div className="sponsor-logo-grid summit-logo-grid">
             <div><img src={summitLogos[8243]} alt="Evrotrust" width={240} height={140} /></div>
-            <div><img src={summitLogos[8391]} alt="ERI" width={240} height={140} /></div>
+            <div><img src={summitLogos[8878]} alt="ERI" width={240} height={140} /></div>
             <div><img src={summitLogos[2050]} alt="Salesforce" width={240} height={140} /></div>
             <div><img src={summitLogos[7356]} alt="Authologic" width={240} height={140} /></div>
             <div><img src={summitLogos[8127]} alt="fme" width={240} height={140} /></div>

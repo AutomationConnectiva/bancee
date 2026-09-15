@@ -38,3 +38,64 @@ export async function getLogosByIds(ids: number[]): Promise<Record<number, strin
   for (const c of data) map[c.company_id] = directDrive(c.image_url);
   return map;
 }
+
+export type EventSponsor = {
+  company_id: number;
+  company_name: string;
+  package_name: string;
+  logo: string;
+};
+
+export async function getEventSponsors(
+  eventId: string
+): Promise<EventSponsor[]> {
+
+  if (!eventId) return [];
+
+  // Get confirmed sponsorship deals for this event
+  const { data: deals, error } = await supabase
+    .from('sponsorship_deals')
+    .select(`
+      company_id,
+      package_name,
+      companies (
+        company_name
+      )
+    `)
+    .eq('event_id', eventId)
+    .eq('deal_stage', 'Confirmed')
+    .not('company_id', 'is', null)
+    .not('package_name', 'is', null);
+
+  if (error) {
+    console.error('Error loading event sponsors:', error);
+    return [];
+  }
+
+  if (!deals || deals.length === 0) {
+    return [];
+  }
+
+  // Get all company IDs
+  const companyIds = [
+    ...new Set(
+      deals
+        .map((deal: any) => deal.company_id)
+        .filter(Boolean)
+    )
+  ];
+
+  // Reuse your existing logo function
+  const logos = await getLogosByIds(companyIds);
+
+  // Build the final sponsor objects
+  return deals
+    .filter((deal: any) => logos[deal.company_id])
+    .map((deal: any) => ({
+      company_id: deal.company_id,
+      company_name:
+        deal.companies?.company_name || `Company ${deal.company_id}`,
+      package_name: deal.package_name,
+      logo: logos[deal.company_id],
+    }));
+}

@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import RequestAttendanceForm from '../../components/RequestAttendanceForm';
 import SpeakerGrid from '../../components/SpeakerGrid';
 import TestimonialSlider from '../../components/TestimonialSlider';
-import { getLogosByIds } from '../../lib/getSponsor';
+import { getEventSponsors } from '../../lib/getSponsor';
 import { getEventModules } from '../../lib/agenda';
 import { getEventSpeakers, getActiveEventIds } from '../../lib/getSpeakers';
 
@@ -15,7 +15,32 @@ export default async function ExpoPage() {
   const { expo: expoEventId } = await getActiveEventIds();
   const speakers = expoEventId ? await getEventSpeakers(expoEventId) : [];
   const modules = expoEventId ? await getEventModules(expoEventId) : [];
-  const expoLogos = await getLogosByIds([7356, 8243, 8391, 8920, 8913]);  console.log('DEBUG speakers:', JSON.stringify(speakers));
+  const sponsors = expoEventId ? await getEventSponsors(expoEventId) : [];
+  const sponsorsByPackage = sponsors.reduce<
+      Record<string, typeof sponsors>
+    >((groups, sponsor) => {
+
+      const packageName = sponsor.package_name?.trim();
+
+      if (!packageName) return groups;
+
+      if (!groups[packageName]) {
+        groups[packageName] = [];
+      }
+
+      groups[packageName].push(sponsor);
+
+      return groups;
+    }, {});
+
+  const packageOrder = [
+    'Platinum Sponsor',
+    'Gold Sponsor',
+    'Silver Sponsor',
+    'Exhibitor',
+  ];
+
+  console.log('DEBUG speakers:', JSON.stringify(speakers));
   console.log('DEBUG expoEventId:', expoEventId);
   return (
     <main className="expo-page" id="top">      <section className="expo-hero">
@@ -107,22 +132,65 @@ export default async function ExpoPage() {
           <p className="section-intro">From major branded environments to focused conversations, partnership at Banking CEE Expo is designed around visibility, credibility and genuine engagement with the audience.</p>
         </div>
         <div className="shell sponsor-visuals">
-          <div className="sponsor-visual"><Image src="/images/expo-2025-evrotrust-activation.jpg" alt="Evrotrust activation at Banking CEE Expo" fill className="cover" /></div>
-          <div className="sponsor-visual"><Image src="/images/expo-2025-tietoevry-activation.jpg" alt="Technology partner activation at Banking CEE Expo" fill className="cover" /></div>
+          <div className="sponsor-visual"><Image src="/images/partner1.webp" alt="Activation at Banking CEE Expo" fill className="cover" /></div>
+          <div className="sponsor-visual"><Image src="/images/partner2.webp" alt="Technology partner activation at Banking CEE Expo" fill className="cover" /></div>
         </div>
+        {sponsors.length > 0 && (
         <div className="shell confirmed-sponsor-block">
-          <p className="sponsor-tier-label">Gold Sponsor</p>
-          <div className="sponsor-logo-grid sponsor-logo-grid-gold">
-            <div><img src={expoLogos[7356]} alt="Authologic" width={300} height={170} /></div>
-          </div>
-          <p className="sponsor-tier-label">Silver Sponsors</p>
-          <div className="sponsor-logo-grid">
-            <div><img src={expoLogos[8243]} alt="Evrotrust" width={240} height={140} /></div>
-            <div><img src={expoLogos[8878]} alt="ERI" width={240} height={140} /></div>
-            <div><img src={expoLogos[8920]} alt="Tieto Banktech" width={240} height={140} /></div>
-            <div><img src={expoLogos[8913]} alt="Guardsquare" width={240} height={140} className="logo-larger" /></div>
-          </div>
+
+          {Object.entries(sponsorsByPackage)
+            .sort(([packageA], [packageB]) => {
+              const indexA = packageOrder.indexOf(packageA);
+              const indexB = packageOrder.indexOf(packageB);
+
+              return (
+                (indexA === -1 ? 999 : indexA) -
+                (indexB === -1 ? 999 : indexB)
+              );
+            })
+            .map(([packageName, packageSponsors]) => {
+
+              if (packageSponsors.length === 0) {
+                return null;
+              }
+
+              const isGold =
+                packageName.toLowerCase().includes('gold');
+
+              return (
+                <div
+                  className="sponsor-tier"
+                  key={packageName}
+                >
+                  <p className="sponsor-tier-label">
+                    {packageName}
+                  </p>
+
+                  <div
+                    className={
+                      isGold
+                        ? 'sponsor-logo-grid sponsor-logo-grid-gold'
+                        : 'sponsor-logo-grid'
+                    }
+                  >
+                    {packageSponsors.map((sponsor) => (
+                      <div key={sponsor.company_id}>
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.company_name}
+                          width={isGold ? 300 : 240}
+                          height={isGold ? 170 : 140}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+          )}
+
         </div>
+      )}
         <div className="shell sponsor-cta"><a className="btn expo-dark-btn" href="/partnership-enquiry?event=expo-2026&source=expo-sponsors">Explore Partnership Opportunities</a></div>
       </section>
 
