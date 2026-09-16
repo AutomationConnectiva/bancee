@@ -38,7 +38,7 @@ function Session({s}:{s:AgendaSession}){
 function SponsorLogo({name,logo}:{name:string;logo?:string}){
  const [broken,setBroken]=useState(false);
  if(!logo||broken) return null;
- return <div className="agenda-module-partner"><small>Module Partner</small><div className="agenda-sponsor-logo"><img src={logo} alt={name} width={180} height={64} onError={()=>setBroken(true)}/></div></div>;
+ return <div className="agenda-module-partner"><div className="agenda-sponsor-logo"><img src={logo} alt={name} width={180} height={64} onError={()=>setBroken(true)}/></div></div>;
 }
 
 function Module({m}:{m:AgendaModule}){
