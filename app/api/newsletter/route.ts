@@ -1,7 +1,59 @@
-import {NextResponse} from 'next/server';
-import {supabase} from '../../../lib/supabase';
-export const runtime='nodejs';
-export async function POST(req:Request){try{const b=await req.json();const email=String(b.email||'').trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(email))return NextResponse.json({error:'Please enter a valid email address.'},{status:400});if(b.consent!=='accepted')return NextResponse.json({error:'Please confirm that you would like to receive Banking CEE communications.'},{status:400});const payload={form_type:'newsletter_signup',business_email:email,first_name:b.firstName?String(b.firstName).trim():null,source:b.source||'website',source_page:b.sourcePage||'/insights',utm_source:b.utmSource||null,utm_medium:b.utmMedium||null,utm_campaign:b.utmCampaign||null,referrer:b.referrer||null,consent_marketing:true,consent_timestamp:new Date().toISOString(),submitted_at:new Date().toISOString()};
- // Preferred capture boundary: persist in Supabase first, then let Make/Airtable/Zoho own nurture.
- const table=process.env.NEWSLETTER_TABLE||'newsletter_signups';const {error}=await supabase.from(table).insert(payload);if(error){if(process.env.MAKE_NEWSLETTER_WEBHOOK_URL){const hook=await fetch(process.env.MAKE_NEWSLETTER_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!hook.ok)throw new Error(`Newsletter capture failed: ${error.message}; Make returned ${hook.status}`)}else throw error}else if(process.env.MAKE_NEWSLETTER_WEBHOOK_URL){await fetch(process.env.MAKE_NEWSLETTER_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>undefined)}
- return NextResponse.json({ok:true,message:'You are now subscribed to Banking CEE updates.'})}catch(e){console.error(e);return NextResponse.json({error:'We could not subscribe you right now. Please try again.'},{status:500})}}
+import { NextResponse } from 'next/server';
+import { supabase } from '../../../lib/supabase';
+
+export const runtime = 'nodejs';
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+
+    const email = String(body.email || '')
+      .trim()
+      .toLowerCase();
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      return NextResponse.json(
+        { error: 'Please enter a valid email address.' },
+        { status: 400 }
+      );
+    }
+
+    if (body.consent !== 'accepted') {
+      return NextResponse.json(
+        {
+          error:
+            'Please confirm that you would like to receive Banking CEE communications.',
+        },
+        { status: 400 }
+      );
+    }
+
+    const { error } = await supabase
+      .from('subscriptions')
+      .upsert(
+        { email },
+        { onConflict: 'email' }
+      );
+
+    if (error) {
+      console.error('Newsletter subscription error:', error);
+
+      return NextResponse.json(
+        { error: 'We could not subscribe you right now. Please try again.' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      ok: true,
+      message: 'You are now subscribed to Banking CEE updates.',
+    });
+  } catch (error) {
+    console.error(error);
+
+    return NextResponse.json(
+      { error: 'We could not subscribe you right now. Please try again.' },
+      { status: 500 }
+    );
+  }
+}

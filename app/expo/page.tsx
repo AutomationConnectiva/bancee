@@ -178,8 +178,8 @@ export default async function ExpoPage() {
                         <img
                           src={sponsor.logo}
                           alt={sponsor.company_name}
-                          width={isGold ? 300 : 240}
-                          height={isGold ? 170 : 140}
+                          width={300}
+                          height={170}
                         />
                       </div>
                     ))}

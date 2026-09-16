@@ -130,12 +130,12 @@ export default async function SummitPage() {
           <p className="sponsor-history-note">2026 Sponsors</p>
           <p className="sponsor-tier-label">Silver Sponsors</p>
           <div className="sponsor-logo-grid summit-logo-grid">
-            <div><img src={summitLogos[8243]} alt="Evrotrust" width={240} height={140} /></div>
-            <div><img src={summitLogos[8878]} alt="ERI" width={240} height={140} /></div>
-            <div><img src={summitLogos[2050]} alt="Salesforce" width={240} height={140} /></div>
-            <div><img src={summitLogos[7356]} alt="Authologic" width={240} height={140} /></div>
-            <div><img src={summitLogos[8127]} alt="fme" width={240} height={140} /></div>
-            <div><img src={summitLogos[823]} alt="OneSpan" width={240} height={140} /></div>
+            <div><img src={summitLogos[8243]} alt="Evrotrust" width={300} height={170} /></div>
+            <div><img src={summitLogos[8878]} alt="ERI" width={300} height={170} /></div>
+            <div><img src={summitLogos[2050]} alt="Salesforce" width={300} height={170} /></div>
+            <div><img src={summitLogos[7356]} alt="Authologic" width={300} height={170} /></div>
+            <div><img src={summitLogos[8127]} alt="fme" width={300} height={170} /></div>
+            <div><img src={summitLogos[823]} alt="OneSpan" width={300} height={170} /></div>
           </div>
           <div className="sponsor-cta"><a className="btn summit-dark-btn" href="/partnership-enquiry?event=summit-2027&source=summit-sponsors">Explore Partnership Opportunities</a></div>
         </div>
